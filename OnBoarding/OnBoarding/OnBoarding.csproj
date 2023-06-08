@@ -162,6 +162,8 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\Maestros\AspectoConductualController.cs" />
+    <Compile Include="Controllers\Maestros\AspectoTecnicoController.cs" />
     <Compile Include="Controllers\Maestros\EmpleadoController.cs" />
     <Compile Include="Controllers\Maestros\RecursoController.cs" />
     <Compile Include="Controllers\Maestros\PuestoController.cs" />
@@ -290,7 +292,9 @@
     <Content Include="Scripts\jquery-3.3.1.slim.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -319,6 +323,16 @@
     <Content Include="Views\Puesto\Details.cshtml" />
     <Content Include="Views\Puesto\Edit.cshtml" />
     <Content Include="Views\Puesto\Index.cshtml" />
+    <Content Include="Views\AspectoTecnico\Create.cshtml" />
+    <Content Include="Views\AspectoTecnico\Delete.cshtml" />
+    <Content Include="Views\AspectoTecnico\Details.cshtml" />
+    <Content Include="Views\AspectoTecnico\Edit.cshtml" />
+    <Content Include="Views\AspectoTecnico\Index.cshtml" />
+    <Content Include="Views\AspectoConductual\Create.cshtml" />
+    <Content Include="Views\AspectoConductual\Delete.cshtml" />
+    <Content Include="Views\AspectoConductual\Details.cshtml" />
+    <Content Include="Views\AspectoConductual\Edit.cshtml" />
+    <Content Include="Views\AspectoConductual\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

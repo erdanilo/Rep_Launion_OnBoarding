@@ -1,0 +1,89 @@
+﻿@model OnBoarding.Models.OBDTAspectoConductual
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>OBDTAspectoConductual</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CodigoAspectoConductual)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CodigoAspectoConductual)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NombreAspectoConductual)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NombreAspectoConductual)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Activo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Activo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UsuarioInserto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UsuarioInserto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaInserto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaInserto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UsuarioModifico)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UsuarioModifico)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaModifico)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaModifico)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OBDTObjetivoAprendizaje.NombreObjetivoAprendizaje)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OBDTObjetivoAprendizaje.NombreObjetivoAprendizaje)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

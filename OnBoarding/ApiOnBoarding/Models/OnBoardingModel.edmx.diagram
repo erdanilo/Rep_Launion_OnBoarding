@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="6620bc39461b40b0a2e44a1ab9bd5c06" Name="Diagram1">
+        <EntityTypeShape EntityType="BIOSALCTEMPModel.OBDTAspectoConductual" Width="1.5" PointX="11" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BIOSALCTEMPModel.OBDTAspectoConductualItemEvaluacion" Width="1.5" PointX="13.25" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BIOSALCTEMPModel.OBDTAspectoTecnico" Width="1.5" PointX="11" PointY="14.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BIOSALCTEMPModel.OBDTAspectoTecnicoItemEvaluacion" Width="1.5" PointX="13.25" PointY="15.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BIOSALCTEMPModel.OBDTEmpleado" Width="1.5" PointX="0.75" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BIOSALCTEMPModel.OBDTEmpleadoPuesto" Width="1.5" PointX="3" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="BIOSALCTEMPModel.OBDTEvaluacionAspectoConductual" Width="1.5" PointX="15.5" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BIOSALCTEMPModel.OBDTEvaluacionAspectoTecnico" Width="1.5" PointX="15.5" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BIOSALCTEMPModel.OBDTItemEvaluacion" Width="1.5" PointX="11" PointY="19.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BIOSALCTEMPModel.OBDTObjetivoAprendizaje" Width="1.5" PointX="8.75" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BIOSALCTEMPModel.OBDTPeriodoEvaluacion" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BIOSALCTEMPModel.OBDTPlan" Width="1.5" PointX="6" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BIOSALCTEMPModel.OBDTPlanPeriodoEvaluacion" Width="1.5" PointX="8.25" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="BIOSALCTEMPModel.OBDTPlanRecurso" Width="1.5" PointX="11.25" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="BIOSALCTEMPModel.OBDTPorcentaje" Width="1.5" PointX="11" PointY="23.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BIOSALCTEMPModel.OBDTPuesto" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="BIOSALCTEMPModel.OBDTRecurso" Width="1.5" PointX="9" PointY="2" IsExpanded="true" />
+        <AssociationConnector Association="BIOSALCTEMPModel.AspectoConductual_ObjetivoAprendizaje_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="BIOSALCTEMPModel.AspectoConductualItemEvaluacion_AspectoConductual_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="BIOSALCTEMPModel.AspectoConductualItemEvaluacion_ItemEvaluacion_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="BIOSALCTEMPModel.AspectoConductualItemEvaluacion_Porcentaje_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="BIOSALCTEMPModel.EvaluacionAspectoConductual_AspectoConductualItemEvaluacion_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="BIOSALCTEMPModel.AspectoTecnico_ObjetivoAprendizaje_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="BIOSALCTEMPModel.AspectoTecnicoItemEvaluacion_AspectoTecnico_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="BIOSALCTEMPModel.AspectoTecnicoItemEvaluacion_ItemEvaluacion_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="BIOSALCTEMPModel.AspectoTecnicoItemEvaluacion_Porcentaje_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="BIOSALCTEMPModel.EvaluacionAspectoTecnico_AspectoTecnicoItemEvaluacion_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="BIOSALCTEMPModel.EmpleadoPuesto_Empleado_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="BIOSALCTEMPModel.Plan_Empleado_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="BIOSALCTEMPModel.EmpleadoPuesto_Puesto_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="BIOSALCTEMPModel.EvaluacionAspectoConductual_PeriodoEvaluacion_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="BIOSALCTEMPModel.EvaluacionAspectoTecnico_PeriodoEvaluacion_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="BIOSALCTEMPModel.PlanPeriodoEvaluacion_PeriodoEvaluacion_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="BIOSALCTEMPModel.Plan_Puesto_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="BIOSALCTEMPModel.PlanPeriodoEvaluacion_Plan_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="BIOSALCTEMPModel.PlanRecurso_Plan_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="BIOSALCTEMPModel.PlanRecurso_Recurso_fk" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

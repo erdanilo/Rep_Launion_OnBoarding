@@ -21,10 +21,10 @@
                         <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
-                        <li>@Html.ActionLink("Lista de planes por puesto", "Index", "OnBoarding")</li>
                         <li>@Html.ActionLink("Crear plan para puesto", "Index", "OnBoarding")</li>
-                        <li>@Html.ActionLink("Asignar plan a colaborador", "Index", "OnBoarding")</li>
-                        <li>@Html.ActionLink("Evaluar a colaborador", "Index", "OnBoarding")</li>
+                        @*<li>@Html.ActionLink("Lista de planes por puesto", "Index", "OnBoarding")</li>*@
+                        @*<li>@Html.ActionLink("Asignar plan a colaborador", "Index", "OnBoarding")</li>*@
+                        @*<li>@Html.ActionLink("Evaluar a colaborador", "Index", "OnBoarding")</li>*@
                     </ul>
                 </li>
                 <li class="dropdown">
@@ -35,7 +35,9 @@
                     <ul class="dropdown-menu">
                         <li>@Html.ActionLink("Recursos", "Index", "Recurso")</li>
                         <li>@Html.ActionLink("Empleados", "Index", "Empleado")</li>
-                        <li>@Html.ActionLink("Puestos", "Index", "Puesto")</li>                        
+                        <li>@Html.ActionLink("Puestos", "Index", "Puesto")</li>
+                        <li>@Html.ActionLink("Skills", "Index", "AspectoTecnico")</li>
+                        <li>@Html.ActionLink("Wills", "Index", "AspectoConductual")</li>
                     </ul>
                 </li>
             </ul>

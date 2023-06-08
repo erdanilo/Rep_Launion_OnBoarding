@@ -1,0 +1,48 @@
+﻿@model IEnumerable<OnBoarding.Models.OBDTAspectoTecnico>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Skills</h2>
+
+<p>
+    @Html.ActionLink("Crear nueva skill", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CodigoAspectoTecnico)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NombreAspectoTecnico)
+        </th>        
+        <th>
+            @Html.DisplayNameFor(model => model.OBDTObjetivoAprendizaje.NombreObjetivoAprendizaje)
+        </th>
+        <th>
+            Opciones
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CodigoAspectoTecnico)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NombreAspectoTecnico)
+        </td>        
+        <td>
+            @Html.DisplayFor(modelItem => item.OBDTObjetivoAprendizaje.NombreObjetivoAprendizaje)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.IdAspectoTecnico }) |
+            @Html.ActionLink("Detalles", "Details", new { id=item.IdAspectoTecnico }) |
+            @Html.ActionLink("Borrar", "Delete", new { id=item.IdAspectoTecnico })
+        </td>
+    </tr>
+}
+
+</table>

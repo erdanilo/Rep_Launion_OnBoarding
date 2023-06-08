@@ -1,39 +1,55 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
+﻿using OnBoarding.Models;
+using System;
 using System.Net;
+using System.Net.Http;
 using System.Threading.Tasks;
-using System.Web;
 using System.Web.Mvc;
-using OnBoarding.Models;
 
 namespace OnBoarding.Controllers
 {
     public class OnBoardingController : Controller
     {
         private BIOSALCTEMPEntities db = new BIOSALCTEMPEntities();
-        // GET: OnBoarding
+        
+        /// <summary>
+        /// Devuelve la vista para crear un plan de OnBoarding asociado a un Puesto
+        /// </summary>
+        /// <returns>Vista</returns>
         public ActionResult Index()
         {
             ViewBag.Recursos = new SelectList(db.OBDTRecurso, "IdRecurso", "NombreRecurso");
             return View();
         }
 
-
-        public ActionResult ObtenerRecursoPorId(int? id)
+        /// <summary>
+        /// Metodo que devuelve un recurso en base a su id en formato json
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>json</returns>
+        public async Task<ActionResult> ObtenerRecursoPorId(int? id)
         {
-            if (id == null)
+            try
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            OBDTRecurso oBDTRecurso = db.OBDTRecurso.Find(id);
-            if (oBDTRecurso == null)
-            {
-                return HttpNotFound();
-            }
+                if (id == null)
+                {
+                    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                }
 
-            return Json(oBDTRecurso, JsonRequestBehavior.AllowGet);            
+                HttpClient client = new HttpClient
+                {
+                    BaseAddress = new Uri("http://localhost:1304/")
+                };
+                HttpResponseMessage respuesta = await client.GetAsync($"api/OnBoarding/{id}");
+                respuesta.EnsureSuccessStatusCode();
+                
+                var recurso = await respuesta.Content.ReadAsAsync<OBDTRecurso>();              
+
+                return Json(recurso, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception ex)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.InternalServerError, ex.ToString());
+            }
         }
 
     }
