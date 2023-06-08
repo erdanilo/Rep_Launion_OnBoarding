@@ -1,0 +1,43 @@
+﻿@model IEnumerable<OnBoarding.Models.OBDTPuesto>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Puestos</h2>
+
+<p>
+    @Html.ActionLink("Crear nuevo puesto", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CodigoPuesto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NombrePuesto)
+        </th>        
+        <th>
+            Opciones
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CodigoPuesto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NombrePuesto)
+        </td>        
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.IdPuesto }) |
+            @Html.ActionLink("Detalles", "Details", new { id=item.IdPuesto }) |
+            @Html.ActionLink("Borrar", "Delete", new { id=item.IdPuesto })
+        </td>
+    </tr>
+}
+
+</table>

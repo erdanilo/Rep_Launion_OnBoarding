@@ -1,0 +1,81 @@
+﻿@model OnBoarding.Models.OBDTPuesto
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>OBDTPuesto</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CodigoPuesto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CodigoPuesto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NombrePuesto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NombrePuesto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Activo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Activo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UsuarioInserto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UsuarioInserto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaInserto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaInserto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UsuarioModifico)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UsuarioModifico)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaModifico)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaModifico)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

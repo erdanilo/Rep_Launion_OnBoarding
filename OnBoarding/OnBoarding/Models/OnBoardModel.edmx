@@ -1,0 +1,1482 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="BIOSALCTEMPModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="OBDTAspectoConductual">
+          <Key>
+            <PropertyRef Name="IdAspectoConductual" />
+          </Key>
+          <Property Name="IdAspectoConductual" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CodigoAspectoConductual" Type="int" Nullable="false" />
+          <Property Name="NombreAspectoConductual" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="IdObjetivoAprendizaje" Type="int" Nullable="false" />
+          <Property Name="Activo" Type="bit" Nullable="false" />
+          <Property Name="UsuarioInserto" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="FechaInserto" Type="datetime" Nullable="false" />
+          <Property Name="UsuarioModifico" Type="nvarchar" MaxLength="100" />
+          <Property Name="FechaModifico" Type="datetime" />
+        </EntityType>
+        <EntityType Name="OBDTAspectoConductualItemEvaluacion">
+          <Key>
+            <PropertyRef Name="IdAspectoConductualItemEvaluacion" />
+          </Key>
+          <Property Name="IdAspectoConductualItemEvaluacion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdAspectoConductual" Type="int" Nullable="false" />
+          <Property Name="IdItemEvaluacion" Type="int" Nullable="false" />
+          <Property Name="IdPorcentaje" Type="int" Nullable="false" />
+          <Property Name="Activo" Type="bit" Nullable="false" />
+          <Property Name="UsuarioInserto" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="FechaInserto" Type="datetime" Nullable="false" />
+          <Property Name="UsuarioModifico" Type="nvarchar" MaxLength="100" />
+          <Property Name="FechaModifico" Type="datetime" />
+        </EntityType>
+        <EntityType Name="OBDTAspectoTecnico">
+          <Key>
+            <PropertyRef Name="IdAspectoTecnico" />
+          </Key>
+          <Property Name="IdAspectoTecnico" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CodigoAspectoTecnico" Type="int" Nullable="false" />
+          <Property Name="NombreAspectoTecnico" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="IdObjetivoAprendizaje" Type="int" Nullable="false" />
+          <Property Name="Activo" Type="bit" Nullable="false" />
+          <Property Name="UsuarioInserto" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="FechaInserto" Type="datetime" Nullable="false" />
+          <Property Name="UsuarioModifico" Type="nvarchar" MaxLength="100" />
+          <Property Name="FechaModifico" Type="datetime" />
+        </EntityType>
+        <EntityType Name="OBDTAspectoTecnicoItemEvaluacion">
+          <Key>
+            <PropertyRef Name="IdAspectoTecnicoItemEvaluacion" />
+          </Key>
+          <Property Name="IdAspectoTecnicoItemEvaluacion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdAspectoTecnico" Type="int" Nullable="false" />
+          <Property Name="IdItemEvaluacion" Type="int" Nullable="false" />
+          <Property Name="IdPorcentaje" Type="int" Nullable="false" />
+          <Property Name="Activo" Type="bit" Nullable="false" />
+          <Property Name="UsuarioInserto" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="FechaInserto" Type="datetime" Nullable="false" />
+          <Property Name="UsuarioModifico" Type="nvarchar" MaxLength="100" />
+          <Property Name="FechaModifico" Type="datetime" />
+        </EntityType>
+        <EntityType Name="OBDTEmpleado">
+          <Key>
+            <PropertyRef Name="IdEmpleado" />
+          </Key>
+          <Property Name="IdEmpleado" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CodigoEmpleado" Type="int" Nullable="false" />
+          <Property Name="NombreEmpleado" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="ApellidoEmpleado" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="FechaIngreso" Type="datetime" Nullable="false" />
+          <Property Name="Gerencia" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Proceso" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Departamento" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Activo" Type="bit" Nullable="false" />
+          <Property Name="UsuarioInserto" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="FechaInserto" Type="datetime" Nullable="false" />
+          <Property Name="UsuarioModifico" Type="nvarchar" MaxLength="100" />
+          <Property Name="FechaModifico" Type="datetime" />
+        </EntityType>
+        <EntityType Name="OBDTEmpleadoPuesto">
+          <Key>
+            <PropertyRef Name="IdEmpleadoPuesto" />
+          </Key>
+          <Property Name="IdEmpleadoPuesto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdEmpleado" Type="int" Nullable="false" />
+          <Property Name="IdPuesto" Type="int" Nullable="false" />
+          <Property Name="Activo" Type="bit" Nullable="false" />
+          <Property Name="UsuarioInserto" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="FechaInserto" Type="datetime" Nullable="false" />
+          <Property Name="UsuarioModifico" Type="nvarchar" MaxLength="100" />
+          <Property Name="FechaModifico" Type="datetime" />
+        </EntityType>
+        <EntityType Name="OBDTEvaluacionAspectoConductual">
+          <Key>
+            <PropertyRef Name="IdEvaluacionAspectoConductual" />
+          </Key>
+          <Property Name="IdEvaluacionAspectoConductual" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdAspectoConductualItemEvaluacion" Type="int" Nullable="false" />
+          <Property Name="IdPeriodoEvaluacion" Type="int" Nullable="false" />
+          <Property Name="Valor" Type="decimal" Precision="7" Scale="2" Nullable="false" />
+          <Property Name="Activo" Type="bit" Nullable="false" />
+          <Property Name="UsuarioInserto" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="FechaInserto" Type="datetime" Nullable="false" />
+          <Property Name="UsuarioModifico" Type="nvarchar" MaxLength="100" />
+          <Property Name="FechaModifico" Type="datetime" />
+        </EntityType>
+        <EntityType Name="OBDTEvaluacionAspectoTecnico">
+          <Key>
+            <PropertyRef Name="IdEvaluacionAspectoTecnico" />
+          </Key>
+          <Property Name="IdEvaluacionAspectoTecnico" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdAspectoTecnicoItemEvaluacion" Type="int" Nullable="false" />
+          <Property Name="IdPeriodoEvaluacion" Type="int" Nullable="false" />
+          <Property Name="Valor" Type="decimal" Precision="7" Scale="2" Nullable="false" />
+          <Property Name="Activo" Type="bit" Nullable="false" />
+          <Property Name="UsuarioInserto" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="FechaInserto" Type="datetime" Nullable="false" />
+          <Property Name="UsuarioModifico" Type="nvarchar" MaxLength="100" />
+          <Property Name="FechaModifico" Type="datetime" />
+        </EntityType>
+        <EntityType Name="OBDTItemEvaluacion">
+          <Key>
+            <PropertyRef Name="IdItemEvaluacion" />
+          </Key>
+          <Property Name="IdItemEvaluacion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CodigoItemEvaluacion" Type="int" Nullable="false" />
+          <Property Name="NombreItemEvaluacion" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Activo" Type="bit" Nullable="false" />
+          <Property Name="UsuarioInserto" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="FechaInserto" Type="datetime" Nullable="false" />
+          <Property Name="UsuarioModifico" Type="nvarchar" MaxLength="100" />
+          <Property Name="FechaModifico" Type="datetime" />
+        </EntityType>
+        <EntityType Name="OBDTObjetivoAprendizaje">
+          <Key>
+            <PropertyRef Name="IdObjetivoAprendizaje" />
+          </Key>
+          <Property Name="IdObjetivoAprendizaje" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CodigoObjetivoAprendizaje" Type="int" Nullable="false" />
+          <Property Name="NombreObjetivoAprendizaje" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Activo" Type="bit" Nullable="false" />
+          <Property Name="UsuarioInserto" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="FechaInserto" Type="datetime" Nullable="false" />
+          <Property Name="UsuarioModifico" Type="nvarchar" MaxLength="100" />
+          <Property Name="FechaModifico" Type="datetime" />
+        </EntityType>
+        <EntityType Name="OBDTPeriodoEvaluacion">
+          <Key>
+            <PropertyRef Name="IdPeriodoEvaluacion" />
+          </Key>
+          <Property Name="IdPeriodoEvaluacion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CodigoPeriodoEvaluacion" Type="int" Nullable="false" />
+          <Property Name="NombrePeriodoEvaluacion" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="FechaPeriodoEvaluacion" Type="datetime" Nullable="false" />
+          <Property Name="Activo" Type="bit" Nullable="false" />
+          <Property Name="UsuarioInserto" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="FechaInserto" Type="datetime" Nullable="false" />
+          <Property Name="UsuarioModifico" Type="nvarchar" MaxLength="100" />
+          <Property Name="FechaModifico" Type="datetime" />
+        </EntityType>
+        <EntityType Name="OBDTPlan">
+          <Key>
+            <PropertyRef Name="IdPlan" />
+          </Key>
+          <Property Name="IdPlan" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CodigoPlan" Type="int" Nullable="false" />
+          <Property Name="NombrePlan" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="IdPuesto" Type="int" Nullable="false" />
+          <Property Name="IdEmpleado" Type="int" />
+          <Property Name="Activo" Type="bit" Nullable="false" />
+          <Property Name="UsuarioInserto" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="FechaInserto" Type="datetime" Nullable="false" />
+          <Property Name="UsuarioModifico" Type="nvarchar" MaxLength="100" />
+          <Property Name="FechaModifico" Type="datetime" />
+        </EntityType>
+        <EntityType Name="OBDTPlanPeriodoEvaluacion">
+          <Key>
+            <PropertyRef Name="IdPlanPeriodoEvaluacion" />
+          </Key>
+          <Property Name="IdPlanPeriodoEvaluacion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdPlan" Type="int" Nullable="false" />
+          <Property Name="IdPeriodoEvaluacion" Type="int" Nullable="false" />
+          <Property Name="Activo" Type="bit" Nullable="false" />
+          <Property Name="UsuarioInserto" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="FechaInserto" Type="datetime" Nullable="false" />
+          <Property Name="UsuarioModifico" Type="nvarchar" MaxLength="100" />
+          <Property Name="FechaModifico" Type="datetime" />
+        </EntityType>
+        <EntityType Name="OBDTPlanRecurso">
+          <Key>
+            <PropertyRef Name="IdPlanRecurso" />
+          </Key>
+          <Property Name="IdPlanRecurso" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdPlan" Type="int" Nullable="false" />
+          <Property Name="IdRecurso" Type="int" Nullable="false" />
+          <Property Name="Activo" Type="bit" Nullable="false" />
+          <Property Name="UsuarioInserto" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="FechaInserto" Type="datetime" Nullable="false" />
+          <Property Name="UsuarioModifico" Type="nvarchar" MaxLength="100" />
+          <Property Name="FechaModifico" Type="datetime" />
+        </EntityType>
+        <EntityType Name="OBDTPorcentaje">
+          <Key>
+            <PropertyRef Name="IdPorcentaje" />
+          </Key>
+          <Property Name="IdPorcentaje" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ValorPorcentaje" Type="decimal" Precision="6" Scale="2" Nullable="false" />
+          <Property Name="Activo" Type="bit" Nullable="false" />
+          <Property Name="UsuarioInserto" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="FechaInserto" Type="datetime" Nullable="false" />
+          <Property Name="UsuarioModifico" Type="nvarchar" MaxLength="100" />
+          <Property Name="FechaModifico" Type="datetime" />
+        </EntityType>
+        <EntityType Name="OBDTPuesto">
+          <Key>
+            <PropertyRef Name="IdPuesto" />
+          </Key>
+          <Property Name="IdPuesto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CodigoPuesto" Type="int" Nullable="false" />
+          <Property Name="NombrePuesto" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Activo" Type="bit" Nullable="false" />
+          <Property Name="UsuarioInserto" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="FechaInserto" Type="datetime" Nullable="false" />
+          <Property Name="UsuarioModifico" Type="nvarchar" MaxLength="100" />
+          <Property Name="FechaModifico" Type="datetime" />
+        </EntityType>
+        <EntityType Name="OBDTRecurso">
+          <Key>
+            <PropertyRef Name="IdRecurso" />
+          </Key>
+          <Property Name="IdRecurso" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CodigoRecurso" Type="int" Nullable="false" />
+          <Property Name="NombreRecurso" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Reponsable" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Activo" Type="bit" Nullable="false" />
+          <Property Name="UsuarioInserto" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="FechaInserto" Type="datetime" Nullable="false" />
+          <Property Name="UsuarioModifico" Type="nvarchar" MaxLength="100" />
+          <Property Name="FechaModifico" Type="datetime" />
+        </EntityType>
+        <Association Name="AspectoConductual_ObjetivoAprendizaje_fk">
+          <End Role="OBDTObjetivoAprendizaje" Type="Self.OBDTObjetivoAprendizaje" Multiplicity="1" />
+          <End Role="OBDTAspectoConductual" Type="Self.OBDTAspectoConductual" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OBDTObjetivoAprendizaje">
+              <PropertyRef Name="IdObjetivoAprendizaje" />
+            </Principal>
+            <Dependent Role="OBDTAspectoConductual">
+              <PropertyRef Name="IdObjetivoAprendizaje" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="AspectoConductualItemEvaluacion_AspectoConductual_fk">
+          <End Role="OBDTAspectoConductual" Type="Self.OBDTAspectoConductual" Multiplicity="1" />
+          <End Role="OBDTAspectoConductualItemEvaluacion" Type="Self.OBDTAspectoConductualItemEvaluacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OBDTAspectoConductual">
+              <PropertyRef Name="IdAspectoConductual" />
+            </Principal>
+            <Dependent Role="OBDTAspectoConductualItemEvaluacion">
+              <PropertyRef Name="IdAspectoConductual" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="AspectoConductualItemEvaluacion_ItemEvaluacion_fk">
+          <End Role="OBDTItemEvaluacion" Type="Self.OBDTItemEvaluacion" Multiplicity="1" />
+          <End Role="OBDTAspectoConductualItemEvaluacion" Type="Self.OBDTAspectoConductualItemEvaluacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OBDTItemEvaluacion">
+              <PropertyRef Name="IdItemEvaluacion" />
+            </Principal>
+            <Dependent Role="OBDTAspectoConductualItemEvaluacion">
+              <PropertyRef Name="IdItemEvaluacion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="AspectoConductualItemEvaluacion_Porcentaje_fk">
+          <End Role="OBDTPorcentaje" Type="Self.OBDTPorcentaje" Multiplicity="1" />
+          <End Role="OBDTAspectoConductualItemEvaluacion" Type="Self.OBDTAspectoConductualItemEvaluacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OBDTPorcentaje">
+              <PropertyRef Name="IdPorcentaje" />
+            </Principal>
+            <Dependent Role="OBDTAspectoConductualItemEvaluacion">
+              <PropertyRef Name="IdPorcentaje" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="AspectoTecnico_ObjetivoAprendizaje_fk">
+          <End Role="OBDTObjetivoAprendizaje" Type="Self.OBDTObjetivoAprendizaje" Multiplicity="1" />
+          <End Role="OBDTAspectoTecnico" Type="Self.OBDTAspectoTecnico" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OBDTObjetivoAprendizaje">
+              <PropertyRef Name="IdObjetivoAprendizaje" />
+            </Principal>
+            <Dependent Role="OBDTAspectoTecnico">
+              <PropertyRef Name="IdObjetivoAprendizaje" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="AspectoTecnicoItemEvaluacion_AspectoTecnico_fk">
+          <End Role="OBDTAspectoTecnico" Type="Self.OBDTAspectoTecnico" Multiplicity="1" />
+          <End Role="OBDTAspectoTecnicoItemEvaluacion" Type="Self.OBDTAspectoTecnicoItemEvaluacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OBDTAspectoTecnico">
+              <PropertyRef Name="IdAspectoTecnico" />
+            </Principal>
+            <Dependent Role="OBDTAspectoTecnicoItemEvaluacion">
+              <PropertyRef Name="IdAspectoTecnico" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="AspectoTecnicoItemEvaluacion_ItemEvaluacion_fk">
+          <End Role="OBDTItemEvaluacion" Type="Self.OBDTItemEvaluacion" Multiplicity="1" />
+          <End Role="OBDTAspectoTecnicoItemEvaluacion" Type="Self.OBDTAspectoTecnicoItemEvaluacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OBDTItemEvaluacion">
+              <PropertyRef Name="IdItemEvaluacion" />
+            </Principal>
+            <Dependent Role="OBDTAspectoTecnicoItemEvaluacion">
+              <PropertyRef Name="IdItemEvaluacion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="AspectoTecnicoItemEvaluacion_Porcentaje_fk">
+          <End Role="OBDTPorcentaje" Type="Self.OBDTPorcentaje" Multiplicity="1" />
+          <End Role="OBDTAspectoTecnicoItemEvaluacion" Type="Self.OBDTAspectoTecnicoItemEvaluacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OBDTPorcentaje">
+              <PropertyRef Name="IdPorcentaje" />
+            </Principal>
+            <Dependent Role="OBDTAspectoTecnicoItemEvaluacion">
+              <PropertyRef Name="IdPorcentaje" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="EmpleadoPuesto_Empleado_fk">
+          <End Role="OBDTEmpleado" Type="Self.OBDTEmpleado" Multiplicity="1" />
+          <End Role="OBDTEmpleadoPuesto" Type="Self.OBDTEmpleadoPuesto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OBDTEmpleado">
+              <PropertyRef Name="IdEmpleado" />
+            </Principal>
+            <Dependent Role="OBDTEmpleadoPuesto">
+              <PropertyRef Name="IdEmpleado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="EmpleadoPuesto_Puesto_fk">
+          <End Role="OBDTPuesto" Type="Self.OBDTPuesto" Multiplicity="1" />
+          <End Role="OBDTEmpleadoPuesto" Type="Self.OBDTEmpleadoPuesto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OBDTPuesto">
+              <PropertyRef Name="IdPuesto" />
+            </Principal>
+            <Dependent Role="OBDTEmpleadoPuesto">
+              <PropertyRef Name="IdPuesto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="EvaluacionAspectoConductual_AspectoConductualItemEvaluacion_fk">
+          <End Role="OBDTAspectoConductualItemEvaluacion" Type="Self.OBDTAspectoConductualItemEvaluacion" Multiplicity="1" />
+          <End Role="OBDTEvaluacionAspectoConductual" Type="Self.OBDTEvaluacionAspectoConductual" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OBDTAspectoConductualItemEvaluacion">
+              <PropertyRef Name="IdAspectoConductualItemEvaluacion" />
+            </Principal>
+            <Dependent Role="OBDTEvaluacionAspectoConductual">
+              <PropertyRef Name="IdAspectoConductualItemEvaluacion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="EvaluacionAspectoConductual_PeriodoEvaluacion_fk">
+          <End Role="OBDTPeriodoEvaluacion" Type="Self.OBDTPeriodoEvaluacion" Multiplicity="1" />
+          <End Role="OBDTEvaluacionAspectoConductual" Type="Self.OBDTEvaluacionAspectoConductual" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OBDTPeriodoEvaluacion">
+              <PropertyRef Name="IdPeriodoEvaluacion" />
+            </Principal>
+            <Dependent Role="OBDTEvaluacionAspectoConductual">
+              <PropertyRef Name="IdPeriodoEvaluacion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="EvaluacionAspectoTecnico_AspectoTecnicoItemEvaluacion_fk">
+          <End Role="OBDTAspectoTecnicoItemEvaluacion" Type="Self.OBDTAspectoTecnicoItemEvaluacion" Multiplicity="1" />
+          <End Role="OBDTEvaluacionAspectoTecnico" Type="Self.OBDTEvaluacionAspectoTecnico" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OBDTAspectoTecnicoItemEvaluacion">
+              <PropertyRef Name="IdAspectoTecnicoItemEvaluacion" />
+            </Principal>
+            <Dependent Role="OBDTEvaluacionAspectoTecnico">
+              <PropertyRef Name="IdAspectoTecnicoItemEvaluacion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="EvaluacionAspectoTecnico_PeriodoEvaluacion_fk">
+          <End Role="OBDTPeriodoEvaluacion" Type="Self.OBDTPeriodoEvaluacion" Multiplicity="1" />
+          <End Role="OBDTEvaluacionAspectoTecnico" Type="Self.OBDTEvaluacionAspectoTecnico" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OBDTPeriodoEvaluacion">
+              <PropertyRef Name="IdPeriodoEvaluacion" />
+            </Principal>
+            <Dependent Role="OBDTEvaluacionAspectoTecnico">
+              <PropertyRef Name="IdPeriodoEvaluacion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Plan_Empleado_fk">
+          <End Role="OBDTEmpleado" Type="Self.OBDTEmpleado" Multiplicity="0..1" />
+          <End Role="OBDTPlan" Type="Self.OBDTPlan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OBDTEmpleado">
+              <PropertyRef Name="IdEmpleado" />
+            </Principal>
+            <Dependent Role="OBDTPlan">
+              <PropertyRef Name="IdEmpleado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Plan_Puesto_fk">
+          <End Role="OBDTPuesto" Type="Self.OBDTPuesto" Multiplicity="1" />
+          <End Role="OBDTPlan" Type="Self.OBDTPlan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OBDTPuesto">
+              <PropertyRef Name="IdPuesto" />
+            </Principal>
+            <Dependent Role="OBDTPlan">
+              <PropertyRef Name="IdPuesto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PlanPeriodoEvaluacion_PeriodoEvaluacion_fk">
+          <End Role="OBDTPeriodoEvaluacion" Type="Self.OBDTPeriodoEvaluacion" Multiplicity="1" />
+          <End Role="OBDTPlanPeriodoEvaluacion" Type="Self.OBDTPlanPeriodoEvaluacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OBDTPeriodoEvaluacion">
+              <PropertyRef Name="IdPeriodoEvaluacion" />
+            </Principal>
+            <Dependent Role="OBDTPlanPeriodoEvaluacion">
+              <PropertyRef Name="IdPeriodoEvaluacion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PlanPeriodoEvaluacion_Plan_fk">
+          <End Role="OBDTPlan" Type="Self.OBDTPlan" Multiplicity="1" />
+          <End Role="OBDTPlanPeriodoEvaluacion" Type="Self.OBDTPlanPeriodoEvaluacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OBDTPlan">
+              <PropertyRef Name="IdPlan" />
+            </Principal>
+            <Dependent Role="OBDTPlanPeriodoEvaluacion">
+              <PropertyRef Name="IdPlan" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PlanRecurso_Plan_fk">
+          <End Role="OBDTPlan" Type="Self.OBDTPlan" Multiplicity="1" />
+          <End Role="OBDTPlanRecurso" Type="Self.OBDTPlanRecurso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OBDTPlan">
+              <PropertyRef Name="IdPlan" />
+            </Principal>
+            <Dependent Role="OBDTPlanRecurso">
+              <PropertyRef Name="IdPlan" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PlanRecurso_Recurso_fk">
+          <End Role="OBDTRecurso" Type="Self.OBDTRecurso" Multiplicity="1" />
+          <End Role="OBDTPlanRecurso" Type="Self.OBDTPlanRecurso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OBDTRecurso">
+              <PropertyRef Name="IdRecurso" />
+            </Principal>
+            <Dependent Role="OBDTPlanRecurso">
+              <PropertyRef Name="IdRecurso" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="BIOSALCTEMPModelStoreContainer">
+          <EntitySet Name="OBDTAspectoConductual" EntityType="Self.OBDTAspectoConductual" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OBDTAspectoConductualItemEvaluacion" EntityType="Self.OBDTAspectoConductualItemEvaluacion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OBDTAspectoTecnico" EntityType="Self.OBDTAspectoTecnico" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OBDTAspectoTecnicoItemEvaluacion" EntityType="Self.OBDTAspectoTecnicoItemEvaluacion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OBDTEmpleado" EntityType="Self.OBDTEmpleado" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OBDTEmpleadoPuesto" EntityType="Self.OBDTEmpleadoPuesto" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OBDTEvaluacionAspectoConductual" EntityType="Self.OBDTEvaluacionAspectoConductual" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OBDTEvaluacionAspectoTecnico" EntityType="Self.OBDTEvaluacionAspectoTecnico" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OBDTItemEvaluacion" EntityType="Self.OBDTItemEvaluacion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OBDTObjetivoAprendizaje" EntityType="Self.OBDTObjetivoAprendizaje" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OBDTPeriodoEvaluacion" EntityType="Self.OBDTPeriodoEvaluacion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OBDTPlan" EntityType="Self.OBDTPlan" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OBDTPlanPeriodoEvaluacion" EntityType="Self.OBDTPlanPeriodoEvaluacion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OBDTPlanRecurso" EntityType="Self.OBDTPlanRecurso" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OBDTPorcentaje" EntityType="Self.OBDTPorcentaje" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OBDTPuesto" EntityType="Self.OBDTPuesto" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OBDTRecurso" EntityType="Self.OBDTRecurso" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="AspectoConductual_ObjetivoAprendizaje_fk" Association="Self.AspectoConductual_ObjetivoAprendizaje_fk">
+            <End Role="OBDTObjetivoAprendizaje" EntitySet="OBDTObjetivoAprendizaje" />
+            <End Role="OBDTAspectoConductual" EntitySet="OBDTAspectoConductual" />
+          </AssociationSet>
+          <AssociationSet Name="AspectoConductualItemEvaluacion_AspectoConductual_fk" Association="Self.AspectoConductualItemEvaluacion_AspectoConductual_fk">
+            <End Role="OBDTAspectoConductual" EntitySet="OBDTAspectoConductual" />
+            <End Role="OBDTAspectoConductualItemEvaluacion" EntitySet="OBDTAspectoConductualItemEvaluacion" />
+          </AssociationSet>
+          <AssociationSet Name="AspectoConductualItemEvaluacion_ItemEvaluacion_fk" Association="Self.AspectoConductualItemEvaluacion_ItemEvaluacion_fk">
+            <End Role="OBDTItemEvaluacion" EntitySet="OBDTItemEvaluacion" />
+            <End Role="OBDTAspectoConductualItemEvaluacion" EntitySet="OBDTAspectoConductualItemEvaluacion" />
+          </AssociationSet>
+          <AssociationSet Name="AspectoConductualItemEvaluacion_Porcentaje_fk" Association="Self.AspectoConductualItemEvaluacion_Porcentaje_fk">
+            <End Role="OBDTPorcentaje" EntitySet="OBDTPorcentaje" />
+            <End Role="OBDTAspectoConductualItemEvaluacion" EntitySet="OBDTAspectoConductualItemEvaluacion" />
+          </AssociationSet>
+          <AssociationSet Name="AspectoTecnico_ObjetivoAprendizaje_fk" Association="Self.AspectoTecnico_ObjetivoAprendizaje_fk">
+            <End Role="OBDTObjetivoAprendizaje" EntitySet="OBDTObjetivoAprendizaje" />
+            <End Role="OBDTAspectoTecnico" EntitySet="OBDTAspectoTecnico" />
+          </AssociationSet>
+          <AssociationSet Name="AspectoTecnicoItemEvaluacion_AspectoTecnico_fk" Association="Self.AspectoTecnicoItemEvaluacion_AspectoTecnico_fk">
+            <End Role="OBDTAspectoTecnico" EntitySet="OBDTAspectoTecnico" />
+            <End Role="OBDTAspectoTecnicoItemEvaluacion" EntitySet="OBDTAspectoTecnicoItemEvaluacion" />
+          </AssociationSet>
+          <AssociationSet Name="AspectoTecnicoItemEvaluacion_ItemEvaluacion_fk" Association="Self.AspectoTecnicoItemEvaluacion_ItemEvaluacion_fk">
+            <End Role="OBDTItemEvaluacion" EntitySet="OBDTItemEvaluacion" />
+            <End Role="OBDTAspectoTecnicoItemEvaluacion" EntitySet="OBDTAspectoTecnicoItemEvaluacion" />
+          </AssociationSet>
+          <AssociationSet Name="AspectoTecnicoItemEvaluacion_Porcentaje_fk" Association="Self.AspectoTecnicoItemEvaluacion_Porcentaje_fk">
+            <End Role="OBDTPorcentaje" EntitySet="OBDTPorcentaje" />
+            <End Role="OBDTAspectoTecnicoItemEvaluacion" EntitySet="OBDTAspectoTecnicoItemEvaluacion" />
+          </AssociationSet>
+          <AssociationSet Name="EmpleadoPuesto_Empleado_fk" Association="Self.EmpleadoPuesto_Empleado_fk">
+            <End Role="OBDTEmpleado" EntitySet="OBDTEmpleado" />
+            <End Role="OBDTEmpleadoPuesto" EntitySet="OBDTEmpleadoPuesto" />
+          </AssociationSet>
+          <AssociationSet Name="EmpleadoPuesto_Puesto_fk" Association="Self.EmpleadoPuesto_Puesto_fk">
+            <End Role="OBDTPuesto" EntitySet="OBDTPuesto" />
+            <End Role="OBDTEmpleadoPuesto" EntitySet="OBDTEmpleadoPuesto" />
+          </AssociationSet>
+          <AssociationSet Name="EvaluacionAspectoConductual_AspectoConductualItemEvaluacion_fk" Association="Self.EvaluacionAspectoConductual_AspectoConductualItemEvaluacion_fk">
+            <End Role="OBDTAspectoConductualItemEvaluacion" EntitySet="OBDTAspectoConductualItemEvaluacion" />
+            <End Role="OBDTEvaluacionAspectoConductual" EntitySet="OBDTEvaluacionAspectoConductual" />
+          </AssociationSet>
+          <AssociationSet Name="EvaluacionAspectoConductual_PeriodoEvaluacion_fk" Association="Self.EvaluacionAspectoConductual_PeriodoEvaluacion_fk">
+            <End Role="OBDTPeriodoEvaluacion" EntitySet="OBDTPeriodoEvaluacion" />
+            <End Role="OBDTEvaluacionAspectoConductual" EntitySet="OBDTEvaluacionAspectoConductual" />
+          </AssociationSet>
+          <AssociationSet Name="EvaluacionAspectoTecnico_AspectoTecnicoItemEvaluacion_fk" Association="Self.EvaluacionAspectoTecnico_AspectoTecnicoItemEvaluacion_fk">
+            <End Role="OBDTAspectoTecnicoItemEvaluacion" EntitySet="OBDTAspectoTecnicoItemEvaluacion" />
+            <End Role="OBDTEvaluacionAspectoTecnico" EntitySet="OBDTEvaluacionAspectoTecnico" />
+          </AssociationSet>
+          <AssociationSet Name="EvaluacionAspectoTecnico_PeriodoEvaluacion_fk" Association="Self.EvaluacionAspectoTecnico_PeriodoEvaluacion_fk">
+            <End Role="OBDTPeriodoEvaluacion" EntitySet="OBDTPeriodoEvaluacion" />
+            <End Role="OBDTEvaluacionAspectoTecnico" EntitySet="OBDTEvaluacionAspectoTecnico" />
+          </AssociationSet>
+          <AssociationSet Name="Plan_Empleado_fk" Association="Self.Plan_Empleado_fk">
+            <End Role="OBDTEmpleado" EntitySet="OBDTEmpleado" />
+            <End Role="OBDTPlan" EntitySet="OBDTPlan" />
+          </AssociationSet>
+          <AssociationSet Name="Plan_Puesto_fk" Association="Self.Plan_Puesto_fk">
+            <End Role="OBDTPuesto" EntitySet="OBDTPuesto" />
+            <End Role="OBDTPlan" EntitySet="OBDTPlan" />
+          </AssociationSet>
+          <AssociationSet Name="PlanPeriodoEvaluacion_PeriodoEvaluacion_fk" Association="Self.PlanPeriodoEvaluacion_PeriodoEvaluacion_fk">
+            <End Role="OBDTPeriodoEvaluacion" EntitySet="OBDTPeriodoEvaluacion" />
+            <End Role="OBDTPlanPeriodoEvaluacion" EntitySet="OBDTPlanPeriodoEvaluacion" />
+          </AssociationSet>
+          <AssociationSet Name="PlanPeriodoEvaluacion_Plan_fk" Association="Self.PlanPeriodoEvaluacion_Plan_fk">
+            <End Role="OBDTPlan" EntitySet="OBDTPlan" />
+            <End Role="OBDTPlanPeriodoEvaluacion" EntitySet="OBDTPlanPeriodoEvaluacion" />
+          </AssociationSet>
+          <AssociationSet Name="PlanRecurso_Plan_fk" Association="Self.PlanRecurso_Plan_fk">
+            <End Role="OBDTPlan" EntitySet="OBDTPlan" />
+            <End Role="OBDTPlanRecurso" EntitySet="OBDTPlanRecurso" />
+          </AssociationSet>
+          <AssociationSet Name="PlanRecurso_Recurso_fk" Association="Self.PlanRecurso_Recurso_fk">
+            <End Role="OBDTRecurso" EntitySet="OBDTRecurso" />
+            <End Role="OBDTPlanRecurso" EntitySet="OBDTPlanRecurso" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BIOSALCTEMPModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="OBDTAspectoConductual">
+          <Key>
+            <PropertyRef Name="IdAspectoConductual" />
+          </Key>
+          <Property Name="IdAspectoConductual" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CodigoAspectoConductual" Type="Int32" Nullable="false" />
+          <Property Name="NombreAspectoConductual" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IdObjetivoAprendizaje" Type="Int32" Nullable="false" />
+          <Property Name="Activo" Type="Boolean" Nullable="false" />
+          <Property Name="UsuarioInserto" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FechaInserto" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UsuarioModifico" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="FechaModifico" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="OBDTObjetivoAprendizaje" Relationship="Self.AspectoConductual_ObjetivoAprendizaje_fk" FromRole="OBDTAspectoConductual" ToRole="OBDTObjetivoAprendizaje" />
+          <NavigationProperty Name="OBDTAspectoConductualItemEvaluacion" Relationship="Self.AspectoConductualItemEvaluacion_AspectoConductual_fk" FromRole="OBDTAspectoConductual" ToRole="OBDTAspectoConductualItemEvaluacion" />
+        </EntityType>
+        <EntityType Name="OBDTAspectoConductualItemEvaluacion">
+          <Key>
+            <PropertyRef Name="IdAspectoConductualItemEvaluacion" />
+          </Key>
+          <Property Name="IdAspectoConductualItemEvaluacion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdAspectoConductual" Type="Int32" Nullable="false" />
+          <Property Name="IdItemEvaluacion" Type="Int32" Nullable="false" />
+          <Property Name="IdPorcentaje" Type="Int32" Nullable="false" />
+          <Property Name="Activo" Type="Boolean" Nullable="false" />
+          <Property Name="UsuarioInserto" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FechaInserto" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UsuarioModifico" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="FechaModifico" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="OBDTAspectoConductual" Relationship="Self.AspectoConductualItemEvaluacion_AspectoConductual_fk" FromRole="OBDTAspectoConductualItemEvaluacion" ToRole="OBDTAspectoConductual" />
+          <NavigationProperty Name="OBDTItemEvaluacion" Relationship="Self.AspectoConductualItemEvaluacion_ItemEvaluacion_fk" FromRole="OBDTAspectoConductualItemEvaluacion" ToRole="OBDTItemEvaluacion" />
+          <NavigationProperty Name="OBDTPorcentaje" Relationship="Self.AspectoConductualItemEvaluacion_Porcentaje_fk" FromRole="OBDTAspectoConductualItemEvaluacion" ToRole="OBDTPorcentaje" />
+          <NavigationProperty Name="OBDTEvaluacionAspectoConductual" Relationship="Self.EvaluacionAspectoConductual_AspectoConductualItemEvaluacion_fk" FromRole="OBDTAspectoConductualItemEvaluacion" ToRole="OBDTEvaluacionAspectoConductual" />
+        </EntityType>
+        <EntityType Name="OBDTAspectoTecnico">
+          <Key>
+            <PropertyRef Name="IdAspectoTecnico" />
+          </Key>
+          <Property Name="IdAspectoTecnico" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CodigoAspectoTecnico" Type="Int32" Nullable="false" />
+          <Property Name="NombreAspectoTecnico" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IdObjetivoAprendizaje" Type="Int32" Nullable="false" />
+          <Property Name="Activo" Type="Boolean" Nullable="false" />
+          <Property Name="UsuarioInserto" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FechaInserto" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UsuarioModifico" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="FechaModifico" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="OBDTObjetivoAprendizaje" Relationship="Self.AspectoTecnico_ObjetivoAprendizaje_fk" FromRole="OBDTAspectoTecnico" ToRole="OBDTObjetivoAprendizaje" />
+          <NavigationProperty Name="OBDTAspectoTecnicoItemEvaluacion" Relationship="Self.AspectoTecnicoItemEvaluacion_AspectoTecnico_fk" FromRole="OBDTAspectoTecnico" ToRole="OBDTAspectoTecnicoItemEvaluacion" />
+        </EntityType>
+        <EntityType Name="OBDTAspectoTecnicoItemEvaluacion">
+          <Key>
+            <PropertyRef Name="IdAspectoTecnicoItemEvaluacion" />
+          </Key>
+          <Property Name="IdAspectoTecnicoItemEvaluacion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdAspectoTecnico" Type="Int32" Nullable="false" />
+          <Property Name="IdItemEvaluacion" Type="Int32" Nullable="false" />
+          <Property Name="IdPorcentaje" Type="Int32" Nullable="false" />
+          <Property Name="Activo" Type="Boolean" Nullable="false" />
+          <Property Name="UsuarioInserto" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FechaInserto" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UsuarioModifico" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="FechaModifico" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="OBDTAspectoTecnico" Relationship="Self.AspectoTecnicoItemEvaluacion_AspectoTecnico_fk" FromRole="OBDTAspectoTecnicoItemEvaluacion" ToRole="OBDTAspectoTecnico" />
+          <NavigationProperty Name="OBDTItemEvaluacion" Relationship="Self.AspectoTecnicoItemEvaluacion_ItemEvaluacion_fk" FromRole="OBDTAspectoTecnicoItemEvaluacion" ToRole="OBDTItemEvaluacion" />
+          <NavigationProperty Name="OBDTPorcentaje" Relationship="Self.AspectoTecnicoItemEvaluacion_Porcentaje_fk" FromRole="OBDTAspectoTecnicoItemEvaluacion" ToRole="OBDTPorcentaje" />
+          <NavigationProperty Name="OBDTEvaluacionAspectoTecnico" Relationship="Self.EvaluacionAspectoTecnico_AspectoTecnicoItemEvaluacion_fk" FromRole="OBDTAspectoTecnicoItemEvaluacion" ToRole="OBDTEvaluacionAspectoTecnico" />
+        </EntityType>
+        <EntityType Name="OBDTEmpleado">
+          <Key>
+            <PropertyRef Name="IdEmpleado" />
+          </Key>
+          <Property Name="IdEmpleado" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CodigoEmpleado" Type="Int32" Nullable="false" />
+          <Property Name="NombreEmpleado" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ApellidoEmpleado" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FechaIngreso" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Gerencia" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Proceso" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Departamento" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Activo" Type="Boolean" Nullable="false" />
+          <Property Name="UsuarioInserto" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FechaInserto" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UsuarioModifico" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="FechaModifico" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="OBDTEmpleadoPuesto" Relationship="Self.EmpleadoPuesto_Empleado_fk" FromRole="OBDTEmpleado" ToRole="OBDTEmpleadoPuesto" />
+          <NavigationProperty Name="OBDTPlan" Relationship="Self.Plan_Empleado_fk" FromRole="OBDTEmpleado" ToRole="OBDTPlan" />
+        </EntityType>
+        <EntityType Name="OBDTEmpleadoPuesto">
+          <Key>
+            <PropertyRef Name="IdEmpleadoPuesto" />
+          </Key>
+          <Property Name="IdEmpleadoPuesto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdEmpleado" Type="Int32" Nullable="false" />
+          <Property Name="IdPuesto" Type="Int32" Nullable="false" />
+          <Property Name="Activo" Type="Boolean" Nullable="false" />
+          <Property Name="UsuarioInserto" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FechaInserto" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UsuarioModifico" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="FechaModifico" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="OBDTEmpleado" Relationship="Self.EmpleadoPuesto_Empleado_fk" FromRole="OBDTEmpleadoPuesto" ToRole="OBDTEmpleado" />
+          <NavigationProperty Name="OBDTPuesto" Relationship="Self.EmpleadoPuesto_Puesto_fk" FromRole="OBDTEmpleadoPuesto" ToRole="OBDTPuesto" />
+        </EntityType>
+        <EntityType Name="OBDTEvaluacionAspectoConductual">
+          <Key>
+            <PropertyRef Name="IdEvaluacionAspectoConductual" />
+          </Key>
+          <Property Name="IdEvaluacionAspectoConductual" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdAspectoConductualItemEvaluacion" Type="Int32" Nullable="false" />
+          <Property Name="IdPeriodoEvaluacion" Type="Int32" Nullable="false" />
+          <Property Name="Valor" Type="Decimal" Precision="7" Scale="2" Nullable="false" />
+          <Property Name="Activo" Type="Boolean" Nullable="false" />
+          <Property Name="UsuarioInserto" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FechaInserto" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UsuarioModifico" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="FechaModifico" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="OBDTAspectoConductualItemEvaluacion" Relationship="Self.EvaluacionAspectoConductual_AspectoConductualItemEvaluacion_fk" FromRole="OBDTEvaluacionAspectoConductual" ToRole="OBDTAspectoConductualItemEvaluacion" />
+          <NavigationProperty Name="OBDTPeriodoEvaluacion" Relationship="Self.EvaluacionAspectoConductual_PeriodoEvaluacion_fk" FromRole="OBDTEvaluacionAspectoConductual" ToRole="OBDTPeriodoEvaluacion" />
+        </EntityType>
+        <EntityType Name="OBDTEvaluacionAspectoTecnico">
+          <Key>
+            <PropertyRef Name="IdEvaluacionAspectoTecnico" />
+          </Key>
+          <Property Name="IdEvaluacionAspectoTecnico" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdAspectoTecnicoItemEvaluacion" Type="Int32" Nullable="false" />
+          <Property Name="IdPeriodoEvaluacion" Type="Int32" Nullable="false" />
+          <Property Name="Valor" Type="Decimal" Precision="7" Scale="2" Nullable="false" />
+          <Property Name="Activo" Type="Boolean" Nullable="false" />
+          <Property Name="UsuarioInserto" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FechaInserto" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UsuarioModifico" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="FechaModifico" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="OBDTAspectoTecnicoItemEvaluacion" Relationship="Self.EvaluacionAspectoTecnico_AspectoTecnicoItemEvaluacion_fk" FromRole="OBDTEvaluacionAspectoTecnico" ToRole="OBDTAspectoTecnicoItemEvaluacion" />
+          <NavigationProperty Name="OBDTPeriodoEvaluacion" Relationship="Self.EvaluacionAspectoTecnico_PeriodoEvaluacion_fk" FromRole="OBDTEvaluacionAspectoTecnico" ToRole="OBDTPeriodoEvaluacion" />
+        </EntityType>
+        <EntityType Name="OBDTItemEvaluacion">
+          <Key>
+            <PropertyRef Name="IdItemEvaluacion" />
+          </Key>
+          <Property Name="IdItemEvaluacion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CodigoItemEvaluacion" Type="Int32" Nullable="false" />
+          <Property Name="NombreItemEvaluacion" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Activo" Type="Boolean" Nullable="false" />
+          <Property Name="UsuarioInserto" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FechaInserto" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UsuarioModifico" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="FechaModifico" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="OBDTAspectoConductualItemEvaluacion" Relationship="Self.AspectoConductualItemEvaluacion_ItemEvaluacion_fk" FromRole="OBDTItemEvaluacion" ToRole="OBDTAspectoConductualItemEvaluacion" />
+          <NavigationProperty Name="OBDTAspectoTecnicoItemEvaluacion" Relationship="Self.AspectoTecnicoItemEvaluacion_ItemEvaluacion_fk" FromRole="OBDTItemEvaluacion" ToRole="OBDTAspectoTecnicoItemEvaluacion" />
+        </EntityType>
+        <EntityType Name="OBDTObjetivoAprendizaje">
+          <Key>
+            <PropertyRef Name="IdObjetivoAprendizaje" />
+          </Key>
+          <Property Name="IdObjetivoAprendizaje" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CodigoObjetivoAprendizaje" Type="Int32" Nullable="false" />
+          <Property Name="NombreObjetivoAprendizaje" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Activo" Type="Boolean" Nullable="false" />
+          <Property Name="UsuarioInserto" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FechaInserto" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UsuarioModifico" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="FechaModifico" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="OBDTAspectoConductual" Relationship="Self.AspectoConductual_ObjetivoAprendizaje_fk" FromRole="OBDTObjetivoAprendizaje" ToRole="OBDTAspectoConductual" />
+          <NavigationProperty Name="OBDTAspectoTecnico" Relationship="Self.AspectoTecnico_ObjetivoAprendizaje_fk" FromRole="OBDTObjetivoAprendizaje" ToRole="OBDTAspectoTecnico" />
+        </EntityType>
+        <EntityType Name="OBDTPeriodoEvaluacion">
+          <Key>
+            <PropertyRef Name="IdPeriodoEvaluacion" />
+          </Key>
+          <Property Name="IdPeriodoEvaluacion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CodigoPeriodoEvaluacion" Type="Int32" Nullable="false" />
+          <Property Name="NombrePeriodoEvaluacion" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FechaPeriodoEvaluacion" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Activo" Type="Boolean" Nullable="false" />
+          <Property Name="UsuarioInserto" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FechaInserto" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UsuarioModifico" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="FechaModifico" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="OBDTEvaluacionAspectoConductual" Relationship="Self.EvaluacionAspectoConductual_PeriodoEvaluacion_fk" FromRole="OBDTPeriodoEvaluacion" ToRole="OBDTEvaluacionAspectoConductual" />
+          <NavigationProperty Name="OBDTEvaluacionAspectoTecnico" Relationship="Self.EvaluacionAspectoTecnico_PeriodoEvaluacion_fk" FromRole="OBDTPeriodoEvaluacion" ToRole="OBDTEvaluacionAspectoTecnico" />
+          <NavigationProperty Name="OBDTPlanPeriodoEvaluacion" Relationship="Self.PlanPeriodoEvaluacion_PeriodoEvaluacion_fk" FromRole="OBDTPeriodoEvaluacion" ToRole="OBDTPlanPeriodoEvaluacion" />
+        </EntityType>
+        <EntityType Name="OBDTPlan">
+          <Key>
+            <PropertyRef Name="IdPlan" />
+          </Key>
+          <Property Name="IdPlan" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CodigoPlan" Type="Int32" Nullable="false" />
+          <Property Name="NombrePlan" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IdPuesto" Type="Int32" Nullable="false" />
+          <Property Name="IdEmpleado" Type="Int32" />
+          <Property Name="Activo" Type="Boolean" Nullable="false" />
+          <Property Name="UsuarioInserto" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FechaInserto" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UsuarioModifico" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="FechaModifico" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="OBDTEmpleado" Relationship="Self.Plan_Empleado_fk" FromRole="OBDTPlan" ToRole="OBDTEmpleado" />
+          <NavigationProperty Name="OBDTPuesto" Relationship="Self.Plan_Puesto_fk" FromRole="OBDTPlan" ToRole="OBDTPuesto" />
+          <NavigationProperty Name="OBDTPlanPeriodoEvaluacion" Relationship="Self.PlanPeriodoEvaluacion_Plan_fk" FromRole="OBDTPlan" ToRole="OBDTPlanPeriodoEvaluacion" />
+          <NavigationProperty Name="OBDTPlanRecurso" Relationship="Self.PlanRecurso_Plan_fk" FromRole="OBDTPlan" ToRole="OBDTPlanRecurso" />
+        </EntityType>
+        <EntityType Name="OBDTPlanPeriodoEvaluacion">
+          <Key>
+            <PropertyRef Name="IdPlanPeriodoEvaluacion" />
+          </Key>
+          <Property Name="IdPlanPeriodoEvaluacion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdPlan" Type="Int32" Nullable="false" />
+          <Property Name="IdPeriodoEvaluacion" Type="Int32" Nullable="false" />
+          <Property Name="Activo" Type="Boolean" Nullable="false" />
+          <Property Name="UsuarioInserto" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FechaInserto" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UsuarioModifico" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="FechaModifico" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="OBDTPeriodoEvaluacion" Relationship="Self.PlanPeriodoEvaluacion_PeriodoEvaluacion_fk" FromRole="OBDTPlanPeriodoEvaluacion" ToRole="OBDTPeriodoEvaluacion" />
+          <NavigationProperty Name="OBDTPlan" Relationship="Self.PlanPeriodoEvaluacion_Plan_fk" FromRole="OBDTPlanPeriodoEvaluacion" ToRole="OBDTPlan" />
+        </EntityType>
+        <EntityType Name="OBDTPlanRecurso">
+          <Key>
+            <PropertyRef Name="IdPlanRecurso" />
+          </Key>
+          <Property Name="IdPlanRecurso" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdPlan" Type="Int32" Nullable="false" />
+          <Property Name="IdRecurso" Type="Int32" Nullable="false" />
+          <Property Name="Activo" Type="Boolean" Nullable="false" />
+          <Property Name="UsuarioInserto" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FechaInserto" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UsuarioModifico" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="FechaModifico" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="OBDTPlan" Relationship="Self.PlanRecurso_Plan_fk" FromRole="OBDTPlanRecurso" ToRole="OBDTPlan" />
+          <NavigationProperty Name="OBDTRecurso" Relationship="Self.PlanRecurso_Recurso_fk" FromRole="OBDTPlanRecurso" ToRole="OBDTRecurso" />
+        </EntityType>
+        <EntityType Name="OBDTPorcentaje">
+          <Key>
+            <PropertyRef Name="IdPorcentaje" />
+          </Key>
+          <Property Name="IdPorcentaje" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ValorPorcentaje" Type="Decimal" Precision="6" Scale="2" Nullable="false" />
+          <Property Name="Activo" Type="Boolean" Nullable="false" />
+          <Property Name="UsuarioInserto" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FechaInserto" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UsuarioModifico" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="FechaModifico" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="OBDTAspectoConductualItemEvaluacion" Relationship="Self.AspectoConductualItemEvaluacion_Porcentaje_fk" FromRole="OBDTPorcentaje" ToRole="OBDTAspectoConductualItemEvaluacion" />
+          <NavigationProperty Name="OBDTAspectoTecnicoItemEvaluacion" Relationship="Self.AspectoTecnicoItemEvaluacion_Porcentaje_fk" FromRole="OBDTPorcentaje" ToRole="OBDTAspectoTecnicoItemEvaluacion" />
+        </EntityType>
+        <EntityType Name="OBDTPuesto">
+          <Key>
+            <PropertyRef Name="IdPuesto" />
+          </Key>
+          <Property Name="IdPuesto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CodigoPuesto" Type="Int32" Nullable="false" />
+          <Property Name="NombrePuesto" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Activo" Type="Boolean" Nullable="false" />
+          <Property Name="UsuarioInserto" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FechaInserto" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UsuarioModifico" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="FechaModifico" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="OBDTEmpleadoPuesto" Relationship="Self.EmpleadoPuesto_Puesto_fk" FromRole="OBDTPuesto" ToRole="OBDTEmpleadoPuesto" />
+          <NavigationProperty Name="OBDTPlan" Relationship="Self.Plan_Puesto_fk" FromRole="OBDTPuesto" ToRole="OBDTPlan" />
+        </EntityType>
+        <EntityType Name="OBDTRecurso">
+          <Key>
+            <PropertyRef Name="IdRecurso" />
+          </Key>
+          <Property Name="IdRecurso" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CodigoRecurso" Type="Int32" Nullable="false" />
+          <Property Name="NombreRecurso" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Reponsable" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Activo" Type="Boolean" Nullable="false" />
+          <Property Name="UsuarioInserto" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FechaInserto" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UsuarioModifico" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="FechaModifico" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="OBDTPlanRecurso" Relationship="Self.PlanRecurso_Recurso_fk" FromRole="OBDTRecurso" ToRole="OBDTPlanRecurso" />
+        </EntityType>
+        <Association Name="AspectoConductual_ObjetivoAprendizaje_fk">
+          <End Role="OBDTObjetivoAprendizaje" Type="Self.OBDTObjetivoAprendizaje" Multiplicity="1" />
+          <End Role="OBDTAspectoConductual" Type="Self.OBDTAspectoConductual" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OBDTObjetivoAprendizaje">
+              <PropertyRef Name="IdObjetivoAprendizaje" />
+            </Principal>
+            <Dependent Role="OBDTAspectoConductual">
+              <PropertyRef Name="IdObjetivoAprendizaje" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="AspectoConductualItemEvaluacion_AspectoConductual_fk">
+          <End Role="OBDTAspectoConductual" Type="Self.OBDTAspectoConductual" Multiplicity="1" />
+          <End Role="OBDTAspectoConductualItemEvaluacion" Type="Self.OBDTAspectoConductualItemEvaluacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OBDTAspectoConductual">
+              <PropertyRef Name="IdAspectoConductual" />
+            </Principal>
+            <Dependent Role="OBDTAspectoConductualItemEvaluacion">
+              <PropertyRef Name="IdAspectoConductual" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="AspectoConductualItemEvaluacion_ItemEvaluacion_fk">
+          <End Role="OBDTItemEvaluacion" Type="Self.OBDTItemEvaluacion" Multiplicity="1" />
+          <End Role="OBDTAspectoConductualItemEvaluacion" Type="Self.OBDTAspectoConductualItemEvaluacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OBDTItemEvaluacion">
+              <PropertyRef Name="IdItemEvaluacion" />
+            </Principal>
+            <Dependent Role="OBDTAspectoConductualItemEvaluacion">
+              <PropertyRef Name="IdItemEvaluacion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="AspectoConductualItemEvaluacion_Porcentaje_fk">
+          <End Role="OBDTPorcentaje" Type="Self.OBDTPorcentaje" Multiplicity="1" />
+          <End Role="OBDTAspectoConductualItemEvaluacion" Type="Self.OBDTAspectoConductualItemEvaluacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OBDTPorcentaje">
+              <PropertyRef Name="IdPorcentaje" />
+            </Principal>
+            <Dependent Role="OBDTAspectoConductualItemEvaluacion">
+              <PropertyRef Name="IdPorcentaje" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="EvaluacionAspectoConductual_AspectoConductualItemEvaluacion_fk">
+          <End Role="OBDTAspectoConductualItemEvaluacion" Type="Self.OBDTAspectoConductualItemEvaluacion" Multiplicity="1" />
+          <End Role="OBDTEvaluacionAspectoConductual" Type="Self.OBDTEvaluacionAspectoConductual" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OBDTAspectoConductualItemEvaluacion">
+              <PropertyRef Name="IdAspectoConductualItemEvaluacion" />
+            </Principal>
+            <Dependent Role="OBDTEvaluacionAspectoConductual">
+              <PropertyRef Name="IdAspectoConductualItemEvaluacion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="AspectoTecnico_ObjetivoAprendizaje_fk">
+          <End Role="OBDTObjetivoAprendizaje" Type="Self.OBDTObjetivoAprendizaje" Multiplicity="1" />
+          <End Role="OBDTAspectoTecnico" Type="Self.OBDTAspectoTecnico" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OBDTObjetivoAprendizaje">
+              <PropertyRef Name="IdObjetivoAprendizaje" />
+            </Principal>
+            <Dependent Role="OBDTAspectoTecnico">
+              <PropertyRef Name="IdObjetivoAprendizaje" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="AspectoTecnicoItemEvaluacion_AspectoTecnico_fk">
+          <End Role="OBDTAspectoTecnico" Type="Self.OBDTAspectoTecnico" Multiplicity="1" />
+          <End Role="OBDTAspectoTecnicoItemEvaluacion" Type="Self.OBDTAspectoTecnicoItemEvaluacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OBDTAspectoTecnico">
+              <PropertyRef Name="IdAspectoTecnico" />
+            </Principal>
+            <Dependent Role="OBDTAspectoTecnicoItemEvaluacion">
+              <PropertyRef Name="IdAspectoTecnico" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="AspectoTecnicoItemEvaluacion_ItemEvaluacion_fk">
+          <End Role="OBDTItemEvaluacion" Type="Self.OBDTItemEvaluacion" Multiplicity="1" />
+          <End Role="OBDTAspectoTecnicoItemEvaluacion" Type="Self.OBDTAspectoTecnicoItemEvaluacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OBDTItemEvaluacion">
+              <PropertyRef Name="IdItemEvaluacion" />
+            </Principal>
+            <Dependent Role="OBDTAspectoTecnicoItemEvaluacion">
+              <PropertyRef Name="IdItemEvaluacion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="AspectoTecnicoItemEvaluacion_Porcentaje_fk">
+          <End Role="OBDTPorcentaje" Type="Self.OBDTPorcentaje" Multiplicity="1" />
+          <End Role="OBDTAspectoTecnicoItemEvaluacion" Type="Self.OBDTAspectoTecnicoItemEvaluacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OBDTPorcentaje">
+              <PropertyRef Name="IdPorcentaje" />
+            </Principal>
+            <Dependent Role="OBDTAspectoTecnicoItemEvaluacion">
+              <PropertyRef Name="IdPorcentaje" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="EvaluacionAspectoTecnico_AspectoTecnicoItemEvaluacion_fk">
+          <End Role="OBDTAspectoTecnicoItemEvaluacion" Type="Self.OBDTAspectoTecnicoItemEvaluacion" Multiplicity="1" />
+          <End Role="OBDTEvaluacionAspectoTecnico" Type="Self.OBDTEvaluacionAspectoTecnico" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OBDTAspectoTecnicoItemEvaluacion">
+              <PropertyRef Name="IdAspectoTecnicoItemEvaluacion" />
+            </Principal>
+            <Dependent Role="OBDTEvaluacionAspectoTecnico">
+              <PropertyRef Name="IdAspectoTecnicoItemEvaluacion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="EmpleadoPuesto_Empleado_fk">
+          <End Role="OBDTEmpleado" Type="Self.OBDTEmpleado" Multiplicity="1" />
+          <End Role="OBDTEmpleadoPuesto" Type="Self.OBDTEmpleadoPuesto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OBDTEmpleado">
+              <PropertyRef Name="IdEmpleado" />
+            </Principal>
+            <Dependent Role="OBDTEmpleadoPuesto">
+              <PropertyRef Name="IdEmpleado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Plan_Empleado_fk">
+          <End Role="OBDTEmpleado" Type="Self.OBDTEmpleado" Multiplicity="0..1" />
+          <End Role="OBDTPlan" Type="Self.OBDTPlan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OBDTEmpleado">
+              <PropertyRef Name="IdEmpleado" />
+            </Principal>
+            <Dependent Role="OBDTPlan">
+              <PropertyRef Name="IdEmpleado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="EmpleadoPuesto_Puesto_fk">
+          <End Role="OBDTPuesto" Type="Self.OBDTPuesto" Multiplicity="1" />
+          <End Role="OBDTEmpleadoPuesto" Type="Self.OBDTEmpleadoPuesto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OBDTPuesto">
+              <PropertyRef Name="IdPuesto" />
+            </Principal>
+            <Dependent Role="OBDTEmpleadoPuesto">
+              <PropertyRef Name="IdPuesto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="EvaluacionAspectoConductual_PeriodoEvaluacion_fk">
+          <End Role="OBDTPeriodoEvaluacion" Type="Self.OBDTPeriodoEvaluacion" Multiplicity="1" />
+          <End Role="OBDTEvaluacionAspectoConductual" Type="Self.OBDTEvaluacionAspectoConductual" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OBDTPeriodoEvaluacion">
+              <PropertyRef Name="IdPeriodoEvaluacion" />
+            </Principal>
+            <Dependent Role="OBDTEvaluacionAspectoConductual">
+              <PropertyRef Name="IdPeriodoEvaluacion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="EvaluacionAspectoTecnico_PeriodoEvaluacion_fk">
+          <End Role="OBDTPeriodoEvaluacion" Type="Self.OBDTPeriodoEvaluacion" Multiplicity="1" />
+          <End Role="OBDTEvaluacionAspectoTecnico" Type="Self.OBDTEvaluacionAspectoTecnico" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OBDTPeriodoEvaluacion">
+              <PropertyRef Name="IdPeriodoEvaluacion" />
+            </Principal>
+            <Dependent Role="OBDTEvaluacionAspectoTecnico">
+              <PropertyRef Name="IdPeriodoEvaluacion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PlanPeriodoEvaluacion_PeriodoEvaluacion_fk">
+          <End Role="OBDTPeriodoEvaluacion" Type="Self.OBDTPeriodoEvaluacion" Multiplicity="1" />
+          <End Role="OBDTPlanPeriodoEvaluacion" Type="Self.OBDTPlanPeriodoEvaluacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OBDTPeriodoEvaluacion">
+              <PropertyRef Name="IdPeriodoEvaluacion" />
+            </Principal>
+            <Dependent Role="OBDTPlanPeriodoEvaluacion">
+              <PropertyRef Name="IdPeriodoEvaluacion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Plan_Puesto_fk">
+          <End Role="OBDTPuesto" Type="Self.OBDTPuesto" Multiplicity="1" />
+          <End Role="OBDTPlan" Type="Self.OBDTPlan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OBDTPuesto">
+              <PropertyRef Name="IdPuesto" />
+            </Principal>
+            <Dependent Role="OBDTPlan">
+              <PropertyRef Name="IdPuesto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PlanPeriodoEvaluacion_Plan_fk">
+          <End Role="OBDTPlan" Type="Self.OBDTPlan" Multiplicity="1" />
+          <End Role="OBDTPlanPeriodoEvaluacion" Type="Self.OBDTPlanPeriodoEvaluacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OBDTPlan">
+              <PropertyRef Name="IdPlan" />
+            </Principal>
+            <Dependent Role="OBDTPlanPeriodoEvaluacion">
+              <PropertyRef Name="IdPlan" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PlanRecurso_Plan_fk">
+          <End Role="OBDTPlan" Type="Self.OBDTPlan" Multiplicity="1" />
+          <End Role="OBDTPlanRecurso" Type="Self.OBDTPlanRecurso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OBDTPlan">
+              <PropertyRef Name="IdPlan" />
+            </Principal>
+            <Dependent Role="OBDTPlanRecurso">
+              <PropertyRef Name="IdPlan" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PlanRecurso_Recurso_fk">
+          <End Role="OBDTRecurso" Type="Self.OBDTRecurso" Multiplicity="1" />
+          <End Role="OBDTPlanRecurso" Type="Self.OBDTPlanRecurso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OBDTRecurso">
+              <PropertyRef Name="IdRecurso" />
+            </Principal>
+            <Dependent Role="OBDTPlanRecurso">
+              <PropertyRef Name="IdRecurso" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="BIOSALCTEMPEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="OBDTAspectoConductual" EntityType="Self.OBDTAspectoConductual" />
+          <EntitySet Name="OBDTAspectoConductualItemEvaluacion" EntityType="Self.OBDTAspectoConductualItemEvaluacion" />
+          <EntitySet Name="OBDTAspectoTecnico" EntityType="Self.OBDTAspectoTecnico" />
+          <EntitySet Name="OBDTAspectoTecnicoItemEvaluacion" EntityType="Self.OBDTAspectoTecnicoItemEvaluacion" />
+          <EntitySet Name="OBDTEmpleado" EntityType="Self.OBDTEmpleado" />
+          <EntitySet Name="OBDTEmpleadoPuesto" EntityType="Self.OBDTEmpleadoPuesto" />
+          <EntitySet Name="OBDTEvaluacionAspectoConductual" EntityType="Self.OBDTEvaluacionAspectoConductual" />
+          <EntitySet Name="OBDTEvaluacionAspectoTecnico" EntityType="Self.OBDTEvaluacionAspectoTecnico" />
+          <EntitySet Name="OBDTItemEvaluacion" EntityType="Self.OBDTItemEvaluacion" />
+          <EntitySet Name="OBDTObjetivoAprendizaje" EntityType="Self.OBDTObjetivoAprendizaje" />
+          <EntitySet Name="OBDTPeriodoEvaluacion" EntityType="Self.OBDTPeriodoEvaluacion" />
+          <EntitySet Name="OBDTPlan" EntityType="Self.OBDTPlan" />
+          <EntitySet Name="OBDTPlanPeriodoEvaluacion" EntityType="Self.OBDTPlanPeriodoEvaluacion" />
+          <EntitySet Name="OBDTPlanRecurso" EntityType="Self.OBDTPlanRecurso" />
+          <EntitySet Name="OBDTPorcentaje" EntityType="Self.OBDTPorcentaje" />
+          <EntitySet Name="OBDTPuesto" EntityType="Self.OBDTPuesto" />
+          <EntitySet Name="OBDTRecurso" EntityType="Self.OBDTRecurso" />
+          <AssociationSet Name="AspectoConductual_ObjetivoAprendizaje_fk" Association="Self.AspectoConductual_ObjetivoAprendizaje_fk">
+            <End Role="OBDTObjetivoAprendizaje" EntitySet="OBDTObjetivoAprendizaje" />
+            <End Role="OBDTAspectoConductual" EntitySet="OBDTAspectoConductual" />
+          </AssociationSet>
+          <AssociationSet Name="AspectoConductualItemEvaluacion_AspectoConductual_fk" Association="Self.AspectoConductualItemEvaluacion_AspectoConductual_fk">
+            <End Role="OBDTAspectoConductual" EntitySet="OBDTAspectoConductual" />
+            <End Role="OBDTAspectoConductualItemEvaluacion" EntitySet="OBDTAspectoConductualItemEvaluacion" />
+          </AssociationSet>
+          <AssociationSet Name="AspectoConductualItemEvaluacion_ItemEvaluacion_fk" Association="Self.AspectoConductualItemEvaluacion_ItemEvaluacion_fk">
+            <End Role="OBDTItemEvaluacion" EntitySet="OBDTItemEvaluacion" />
+            <End Role="OBDTAspectoConductualItemEvaluacion" EntitySet="OBDTAspectoConductualItemEvaluacion" />
+          </AssociationSet>
+          <AssociationSet Name="AspectoConductualItemEvaluacion_Porcentaje_fk" Association="Self.AspectoConductualItemEvaluacion_Porcentaje_fk">
+            <End Role="OBDTPorcentaje" EntitySet="OBDTPorcentaje" />
+            <End Role="OBDTAspectoConductualItemEvaluacion" EntitySet="OBDTAspectoConductualItemEvaluacion" />
+          </AssociationSet>
+          <AssociationSet Name="EvaluacionAspectoConductual_AspectoConductualItemEvaluacion_fk" Association="Self.EvaluacionAspectoConductual_AspectoConductualItemEvaluacion_fk">
+            <End Role="OBDTAspectoConductualItemEvaluacion" EntitySet="OBDTAspectoConductualItemEvaluacion" />
+            <End Role="OBDTEvaluacionAspectoConductual" EntitySet="OBDTEvaluacionAspectoConductual" />
+          </AssociationSet>
+          <AssociationSet Name="AspectoTecnico_ObjetivoAprendizaje_fk" Association="Self.AspectoTecnico_ObjetivoAprendizaje_fk">
+            <End Role="OBDTObjetivoAprendizaje" EntitySet="OBDTObjetivoAprendizaje" />
+            <End Role="OBDTAspectoTecnico" EntitySet="OBDTAspectoTecnico" />
+          </AssociationSet>
+          <AssociationSet Name="AspectoTecnicoItemEvaluacion_AspectoTecnico_fk" Association="Self.AspectoTecnicoItemEvaluacion_AspectoTecnico_fk">
+            <End Role="OBDTAspectoTecnico" EntitySet="OBDTAspectoTecnico" />
+            <End Role="OBDTAspectoTecnicoItemEvaluacion" EntitySet="OBDTAspectoTecnicoItemEvaluacion" />
+          </AssociationSet>
+          <AssociationSet Name="AspectoTecnicoItemEvaluacion_ItemEvaluacion_fk" Association="Self.AspectoTecnicoItemEvaluacion_ItemEvaluacion_fk">
+            <End Role="OBDTItemEvaluacion" EntitySet="OBDTItemEvaluacion" />
+            <End Role="OBDTAspectoTecnicoItemEvaluacion" EntitySet="OBDTAspectoTecnicoItemEvaluacion" />
+          </AssociationSet>
+          <AssociationSet Name="AspectoTecnicoItemEvaluacion_Porcentaje_fk" Association="Self.AspectoTecnicoItemEvaluacion_Porcentaje_fk">
+            <End Role="OBDTPorcentaje" EntitySet="OBDTPorcentaje" />
+            <End Role="OBDTAspectoTecnicoItemEvaluacion" EntitySet="OBDTAspectoTecnicoItemEvaluacion" />
+          </AssociationSet>
+          <AssociationSet Name="EvaluacionAspectoTecnico_AspectoTecnicoItemEvaluacion_fk" Association="Self.EvaluacionAspectoTecnico_AspectoTecnicoItemEvaluacion_fk">
+            <End Role="OBDTAspectoTecnicoItemEvaluacion" EntitySet="OBDTAspectoTecnicoItemEvaluacion" />
+            <End Role="OBDTEvaluacionAspectoTecnico" EntitySet="OBDTEvaluacionAspectoTecnico" />
+          </AssociationSet>
+          <AssociationSet Name="EmpleadoPuesto_Empleado_fk" Association="Self.EmpleadoPuesto_Empleado_fk">
+            <End Role="OBDTEmpleado" EntitySet="OBDTEmpleado" />
+            <End Role="OBDTEmpleadoPuesto" EntitySet="OBDTEmpleadoPuesto" />
+          </AssociationSet>
+          <AssociationSet Name="Plan_Empleado_fk" Association="Self.Plan_Empleado_fk">
+            <End Role="OBDTEmpleado" EntitySet="OBDTEmpleado" />
+            <End Role="OBDTPlan" EntitySet="OBDTPlan" />
+          </AssociationSet>
+          <AssociationSet Name="EmpleadoPuesto_Puesto_fk" Association="Self.EmpleadoPuesto_Puesto_fk">
+            <End Role="OBDTPuesto" EntitySet="OBDTPuesto" />
+            <End Role="OBDTEmpleadoPuesto" EntitySet="OBDTEmpleadoPuesto" />
+          </AssociationSet>
+          <AssociationSet Name="EvaluacionAspectoConductual_PeriodoEvaluacion_fk" Association="Self.EvaluacionAspectoConductual_PeriodoEvaluacion_fk">
+            <End Role="OBDTPeriodoEvaluacion" EntitySet="OBDTPeriodoEvaluacion" />
+            <End Role="OBDTEvaluacionAspectoConductual" EntitySet="OBDTEvaluacionAspectoConductual" />
+          </AssociationSet>
+          <AssociationSet Name="EvaluacionAspectoTecnico_PeriodoEvaluacion_fk" Association="Self.EvaluacionAspectoTecnico_PeriodoEvaluacion_fk">
+            <End Role="OBDTPeriodoEvaluacion" EntitySet="OBDTPeriodoEvaluacion" />
+            <End Role="OBDTEvaluacionAspectoTecnico" EntitySet="OBDTEvaluacionAspectoTecnico" />
+          </AssociationSet>
+          <AssociationSet Name="PlanPeriodoEvaluacion_PeriodoEvaluacion_fk" Association="Self.PlanPeriodoEvaluacion_PeriodoEvaluacion_fk">
+            <End Role="OBDTPeriodoEvaluacion" EntitySet="OBDTPeriodoEvaluacion" />
+            <End Role="OBDTPlanPeriodoEvaluacion" EntitySet="OBDTPlanPeriodoEvaluacion" />
+          </AssociationSet>
+          <AssociationSet Name="Plan_Puesto_fk" Association="Self.Plan_Puesto_fk">
+            <End Role="OBDTPuesto" EntitySet="OBDTPuesto" />
+            <End Role="OBDTPlan" EntitySet="OBDTPlan" />
+          </AssociationSet>
+          <AssociationSet Name="PlanPeriodoEvaluacion_Plan_fk" Association="Self.PlanPeriodoEvaluacion_Plan_fk">
+            <End Role="OBDTPlan" EntitySet="OBDTPlan" />
+            <End Role="OBDTPlanPeriodoEvaluacion" EntitySet="OBDTPlanPeriodoEvaluacion" />
+          </AssociationSet>
+          <AssociationSet Name="PlanRecurso_Plan_fk" Association="Self.PlanRecurso_Plan_fk">
+            <End Role="OBDTPlan" EntitySet="OBDTPlan" />
+            <End Role="OBDTPlanRecurso" EntitySet="OBDTPlanRecurso" />
+          </AssociationSet>
+          <AssociationSet Name="PlanRecurso_Recurso_fk" Association="Self.PlanRecurso_Recurso_fk">
+            <End Role="OBDTRecurso" EntitySet="OBDTRecurso" />
+            <End Role="OBDTPlanRecurso" EntitySet="OBDTPlanRecurso" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="BIOSALCTEMPModelStoreContainer" CdmEntityContainer="BIOSALCTEMPEntities">
+          <EntitySetMapping Name="OBDTAspectoConductual">
+            <EntityTypeMapping TypeName="BIOSALCTEMPModel.OBDTAspectoConductual">
+              <MappingFragment StoreEntitySet="OBDTAspectoConductual">
+                <ScalarProperty Name="IdAspectoConductual" ColumnName="IdAspectoConductual" />
+                <ScalarProperty Name="CodigoAspectoConductual" ColumnName="CodigoAspectoConductual" />
+                <ScalarProperty Name="NombreAspectoConductual" ColumnName="NombreAspectoConductual" />
+                <ScalarProperty Name="IdObjetivoAprendizaje" ColumnName="IdObjetivoAprendizaje" />
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+                <ScalarProperty Name="UsuarioInserto" ColumnName="UsuarioInserto" />
+                <ScalarProperty Name="FechaInserto" ColumnName="FechaInserto" />
+                <ScalarProperty Name="UsuarioModifico" ColumnName="UsuarioModifico" />
+                <ScalarProperty Name="FechaModifico" ColumnName="FechaModifico" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OBDTAspectoConductualItemEvaluacion">
+            <EntityTypeMapping TypeName="BIOSALCTEMPModel.OBDTAspectoConductualItemEvaluacion">
+              <MappingFragment StoreEntitySet="OBDTAspectoConductualItemEvaluacion">
+                <ScalarProperty Name="IdAspectoConductualItemEvaluacion" ColumnName="IdAspectoConductualItemEvaluacion" />
+                <ScalarProperty Name="IdAspectoConductual" ColumnName="IdAspectoConductual" />
+                <ScalarProperty Name="IdItemEvaluacion" ColumnName="IdItemEvaluacion" />
+                <ScalarProperty Name="IdPorcentaje" ColumnName="IdPorcentaje" />
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+                <ScalarProperty Name="UsuarioInserto" ColumnName="UsuarioInserto" />
+                <ScalarProperty Name="FechaInserto" ColumnName="FechaInserto" />
+                <ScalarProperty Name="UsuarioModifico" ColumnName="UsuarioModifico" />
+                <ScalarProperty Name="FechaModifico" ColumnName="FechaModifico" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OBDTAspectoTecnico">
+            <EntityTypeMapping TypeName="BIOSALCTEMPModel.OBDTAspectoTecnico">
+              <MappingFragment StoreEntitySet="OBDTAspectoTecnico">
+                <ScalarProperty Name="IdAspectoTecnico" ColumnName="IdAspectoTecnico" />
+                <ScalarProperty Name="CodigoAspectoTecnico" ColumnName="CodigoAspectoTecnico" />
+                <ScalarProperty Name="NombreAspectoTecnico" ColumnName="NombreAspectoTecnico" />
+                <ScalarProperty Name="IdObjetivoAprendizaje" ColumnName="IdObjetivoAprendizaje" />
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+                <ScalarProperty Name="UsuarioInserto" ColumnName="UsuarioInserto" />
+                <ScalarProperty Name="FechaInserto" ColumnName="FechaInserto" />
+                <ScalarProperty Name="UsuarioModifico" ColumnName="UsuarioModifico" />
+                <ScalarProperty Name="FechaModifico" ColumnName="FechaModifico" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OBDTAspectoTecnicoItemEvaluacion">
+            <EntityTypeMapping TypeName="BIOSALCTEMPModel.OBDTAspectoTecnicoItemEvaluacion">
+              <MappingFragment StoreEntitySet="OBDTAspectoTecnicoItemEvaluacion">
+                <ScalarProperty Name="IdAspectoTecnicoItemEvaluacion" ColumnName="IdAspectoTecnicoItemEvaluacion" />
+                <ScalarProperty Name="IdAspectoTecnico" ColumnName="IdAspectoTecnico" />
+                <ScalarProperty Name="IdItemEvaluacion" ColumnName="IdItemEvaluacion" />
+                <ScalarProperty Name="IdPorcentaje" ColumnName="IdPorcentaje" />
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+                <ScalarProperty Name="UsuarioInserto" ColumnName="UsuarioInserto" />
+                <ScalarProperty Name="FechaInserto" ColumnName="FechaInserto" />
+                <ScalarProperty Name="UsuarioModifico" ColumnName="UsuarioModifico" />
+                <ScalarProperty Name="FechaModifico" ColumnName="FechaModifico" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OBDTEmpleado">
+            <EntityTypeMapping TypeName="BIOSALCTEMPModel.OBDTEmpleado">
+              <MappingFragment StoreEntitySet="OBDTEmpleado">
+                <ScalarProperty Name="IdEmpleado" ColumnName="IdEmpleado" />
+                <ScalarProperty Name="CodigoEmpleado" ColumnName="CodigoEmpleado" />
+                <ScalarProperty Name="NombreEmpleado" ColumnName="NombreEmpleado" />
+                <ScalarProperty Name="ApellidoEmpleado" ColumnName="ApellidoEmpleado" />
+                <ScalarProperty Name="FechaIngreso" ColumnName="FechaIngreso" />
+                <ScalarProperty Name="Gerencia" ColumnName="Gerencia" />
+                <ScalarProperty Name="Proceso" ColumnName="Proceso" />
+                <ScalarProperty Name="Departamento" ColumnName="Departamento" />
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+                <ScalarProperty Name="UsuarioInserto" ColumnName="UsuarioInserto" />
+                <ScalarProperty Name="FechaInserto" ColumnName="FechaInserto" />
+                <ScalarProperty Name="UsuarioModifico" ColumnName="UsuarioModifico" />
+                <ScalarProperty Name="FechaModifico" ColumnName="FechaModifico" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OBDTEmpleadoPuesto">
+            <EntityTypeMapping TypeName="BIOSALCTEMPModel.OBDTEmpleadoPuesto">
+              <MappingFragment StoreEntitySet="OBDTEmpleadoPuesto">
+                <ScalarProperty Name="IdEmpleadoPuesto" ColumnName="IdEmpleadoPuesto" />
+                <ScalarProperty Name="IdEmpleado" ColumnName="IdEmpleado" />
+                <ScalarProperty Name="IdPuesto" ColumnName="IdPuesto" />
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+                <ScalarProperty Name="UsuarioInserto" ColumnName="UsuarioInserto" />
+                <ScalarProperty Name="FechaInserto" ColumnName="FechaInserto" />
+                <ScalarProperty Name="UsuarioModifico" ColumnName="UsuarioModifico" />
+                <ScalarProperty Name="FechaModifico" ColumnName="FechaModifico" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OBDTEvaluacionAspectoConductual">
+            <EntityTypeMapping TypeName="BIOSALCTEMPModel.OBDTEvaluacionAspectoConductual">
+              <MappingFragment StoreEntitySet="OBDTEvaluacionAspectoConductual">
+                <ScalarProperty Name="IdEvaluacionAspectoConductual" ColumnName="IdEvaluacionAspectoConductual" />
+                <ScalarProperty Name="IdAspectoConductualItemEvaluacion" ColumnName="IdAspectoConductualItemEvaluacion" />
+                <ScalarProperty Name="IdPeriodoEvaluacion" ColumnName="IdPeriodoEvaluacion" />
+                <ScalarProperty Name="Valor" ColumnName="Valor" />
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+                <ScalarProperty Name="UsuarioInserto" ColumnName="UsuarioInserto" />
+                <ScalarProperty Name="FechaInserto" ColumnName="FechaInserto" />
+                <ScalarProperty Name="UsuarioModifico" ColumnName="UsuarioModifico" />
+                <ScalarProperty Name="FechaModifico" ColumnName="FechaModifico" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OBDTEvaluacionAspectoTecnico">
+            <EntityTypeMapping TypeName="BIOSALCTEMPModel.OBDTEvaluacionAspectoTecnico">
+              <MappingFragment StoreEntitySet="OBDTEvaluacionAspectoTecnico">
+                <ScalarProperty Name="IdEvaluacionAspectoTecnico" ColumnName="IdEvaluacionAspectoTecnico" />
+                <ScalarProperty Name="IdAspectoTecnicoItemEvaluacion" ColumnName="IdAspectoTecnicoItemEvaluacion" />
+                <ScalarProperty Name="IdPeriodoEvaluacion" ColumnName="IdPeriodoEvaluacion" />
+                <ScalarProperty Name="Valor" ColumnName="Valor" />
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+                <ScalarProperty Name="UsuarioInserto" ColumnName="UsuarioInserto" />
+                <ScalarProperty Name="FechaInserto" ColumnName="FechaInserto" />
+                <ScalarProperty Name="UsuarioModifico" ColumnName="UsuarioModifico" />
+                <ScalarProperty Name="FechaModifico" ColumnName="FechaModifico" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OBDTItemEvaluacion">
+            <EntityTypeMapping TypeName="BIOSALCTEMPModel.OBDTItemEvaluacion">
+              <MappingFragment StoreEntitySet="OBDTItemEvaluacion">
+                <ScalarProperty Name="IdItemEvaluacion" ColumnName="IdItemEvaluacion" />
+                <ScalarProperty Name="CodigoItemEvaluacion" ColumnName="CodigoItemEvaluacion" />
+                <ScalarProperty Name="NombreItemEvaluacion" ColumnName="NombreItemEvaluacion" />
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+                <ScalarProperty Name="UsuarioInserto" ColumnName="UsuarioInserto" />
+                <ScalarProperty Name="FechaInserto" ColumnName="FechaInserto" />
+                <ScalarProperty Name="UsuarioModifico" ColumnName="UsuarioModifico" />
+                <ScalarProperty Name="FechaModifico" ColumnName="FechaModifico" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OBDTObjetivoAprendizaje">
+            <EntityTypeMapping TypeName="BIOSALCTEMPModel.OBDTObjetivoAprendizaje">
+              <MappingFragment StoreEntitySet="OBDTObjetivoAprendizaje">
+                <ScalarProperty Name="IdObjetivoAprendizaje" ColumnName="IdObjetivoAprendizaje" />
+                <ScalarProperty Name="CodigoObjetivoAprendizaje" ColumnName="CodigoObjetivoAprendizaje" />
+                <ScalarProperty Name="NombreObjetivoAprendizaje" ColumnName="NombreObjetivoAprendizaje" />
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+                <ScalarProperty Name="UsuarioInserto" ColumnName="UsuarioInserto" />
+                <ScalarProperty Name="FechaInserto" ColumnName="FechaInserto" />
+                <ScalarProperty Name="UsuarioModifico" ColumnName="UsuarioModifico" />
+                <ScalarProperty Name="FechaModifico" ColumnName="FechaModifico" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OBDTPeriodoEvaluacion">
+            <EntityTypeMapping TypeName="BIOSALCTEMPModel.OBDTPeriodoEvaluacion">
+              <MappingFragment StoreEntitySet="OBDTPeriodoEvaluacion">
+                <ScalarProperty Name="IdPeriodoEvaluacion" ColumnName="IdPeriodoEvaluacion" />
+                <ScalarProperty Name="CodigoPeriodoEvaluacion" ColumnName="CodigoPeriodoEvaluacion" />
+                <ScalarProperty Name="NombrePeriodoEvaluacion" ColumnName="NombrePeriodoEvaluacion" />
+                <ScalarProperty Name="FechaPeriodoEvaluacion" ColumnName="FechaPeriodoEvaluacion" />
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+                <ScalarProperty Name="UsuarioInserto" ColumnName="UsuarioInserto" />
+                <ScalarProperty Name="FechaInserto" ColumnName="FechaInserto" />
+                <ScalarProperty Name="UsuarioModifico" ColumnName="UsuarioModifico" />
+                <ScalarProperty Name="FechaModifico" ColumnName="FechaModifico" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OBDTPlan">
+            <EntityTypeMapping TypeName="BIOSALCTEMPModel.OBDTPlan">
+              <MappingFragment StoreEntitySet="OBDTPlan">
+                <ScalarProperty Name="IdPlan" ColumnName="IdPlan" />
+                <ScalarProperty Name="CodigoPlan" ColumnName="CodigoPlan" />
+                <ScalarProperty Name="NombrePlan" ColumnName="NombrePlan" />
+                <ScalarProperty Name="IdPuesto" ColumnName="IdPuesto" />
+                <ScalarProperty Name="IdEmpleado" ColumnName="IdEmpleado" />
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+                <ScalarProperty Name="UsuarioInserto" ColumnName="UsuarioInserto" />
+                <ScalarProperty Name="FechaInserto" ColumnName="FechaInserto" />
+                <ScalarProperty Name="UsuarioModifico" ColumnName="UsuarioModifico" />
+                <ScalarProperty Name="FechaModifico" ColumnName="FechaModifico" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OBDTPlanPeriodoEvaluacion">
+            <EntityTypeMapping TypeName="BIOSALCTEMPModel.OBDTPlanPeriodoEvaluacion">
+              <MappingFragment StoreEntitySet="OBDTPlanPeriodoEvaluacion">
+                <ScalarProperty Name="IdPlanPeriodoEvaluacion" ColumnName="IdPlanPeriodoEvaluacion" />
+                <ScalarProperty Name="IdPlan" ColumnName="IdPlan" />
+                <ScalarProperty Name="IdPeriodoEvaluacion" ColumnName="IdPeriodoEvaluacion" />
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+                <ScalarProperty Name="UsuarioInserto" ColumnName="UsuarioInserto" />
+                <ScalarProperty Name="FechaInserto" ColumnName="FechaInserto" />
+                <ScalarProperty Name="UsuarioModifico" ColumnName="UsuarioModifico" />
+                <ScalarProperty Name="FechaModifico" ColumnName="FechaModifico" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OBDTPlanRecurso">
+            <EntityTypeMapping TypeName="BIOSALCTEMPModel.OBDTPlanRecurso">
+              <MappingFragment StoreEntitySet="OBDTPlanRecurso">
+                <ScalarProperty Name="IdPlanRecurso" ColumnName="IdPlanRecurso" />
+                <ScalarProperty Name="IdPlan" ColumnName="IdPlan" />
+                <ScalarProperty Name="IdRecurso" ColumnName="IdRecurso" />
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+                <ScalarProperty Name="UsuarioInserto" ColumnName="UsuarioInserto" />
+                <ScalarProperty Name="FechaInserto" ColumnName="FechaInserto" />
+                <ScalarProperty Name="UsuarioModifico" ColumnName="UsuarioModifico" />
+                <ScalarProperty Name="FechaModifico" ColumnName="FechaModifico" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OBDTPorcentaje">
+            <EntityTypeMapping TypeName="BIOSALCTEMPModel.OBDTPorcentaje">
+              <MappingFragment StoreEntitySet="OBDTPorcentaje">
+                <ScalarProperty Name="IdPorcentaje" ColumnName="IdPorcentaje" />
+                <ScalarProperty Name="ValorPorcentaje" ColumnName="ValorPorcentaje" />
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+                <ScalarProperty Name="UsuarioInserto" ColumnName="UsuarioInserto" />
+                <ScalarProperty Name="FechaInserto" ColumnName="FechaInserto" />
+                <ScalarProperty Name="UsuarioModifico" ColumnName="UsuarioModifico" />
+                <ScalarProperty Name="FechaModifico" ColumnName="FechaModifico" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OBDTPuesto">
+            <EntityTypeMapping TypeName="BIOSALCTEMPModel.OBDTPuesto">
+              <MappingFragment StoreEntitySet="OBDTPuesto">
+                <ScalarProperty Name="IdPuesto" ColumnName="IdPuesto" />
+                <ScalarProperty Name="CodigoPuesto" ColumnName="CodigoPuesto" />
+                <ScalarProperty Name="NombrePuesto" ColumnName="NombrePuesto" />
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+                <ScalarProperty Name="UsuarioInserto" ColumnName="UsuarioInserto" />
+                <ScalarProperty Name="FechaInserto" ColumnName="FechaInserto" />
+                <ScalarProperty Name="UsuarioModifico" ColumnName="UsuarioModifico" />
+                <ScalarProperty Name="FechaModifico" ColumnName="FechaModifico" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OBDTRecurso">
+            <EntityTypeMapping TypeName="BIOSALCTEMPModel.OBDTRecurso">
+              <MappingFragment StoreEntitySet="OBDTRecurso">
+                <ScalarProperty Name="IdRecurso" ColumnName="IdRecurso" />
+                <ScalarProperty Name="CodigoRecurso" ColumnName="CodigoRecurso" />
+                <ScalarProperty Name="NombreRecurso" ColumnName="NombreRecurso" />
+                <ScalarProperty Name="Reponsable" ColumnName="Reponsable" />
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+                <ScalarProperty Name="UsuarioInserto" ColumnName="UsuarioInserto" />
+                <ScalarProperty Name="FechaInserto" ColumnName="FechaInserto" />
+                <ScalarProperty Name="UsuarioModifico" ColumnName="UsuarioModifico" />
+                <ScalarProperty Name="FechaModifico" ColumnName="FechaModifico" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

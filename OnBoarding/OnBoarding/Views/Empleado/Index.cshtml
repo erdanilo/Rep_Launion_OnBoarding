@@ -1,0 +1,72 @@
+﻿@model IEnumerable<OnBoarding.Models.OBDTEmpleado>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Empleados</h2>
+
+<p>
+    @Html.ActionLink("Crear nuevo empleado", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CodigoEmpleado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NombreEmpleado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ApellidoEmpleado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaIngreso)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Gerencia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Proceso)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Departamento)
+        </th>
+        <th>
+            Opciones
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CodigoEmpleado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NombreEmpleado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ApellidoEmpleado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FechaIngreso)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Gerencia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Proceso)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Departamento)
+        </td>        
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.IdEmpleado }) |
+            @Html.ActionLink("Detalles", "Details", new { id=item.IdEmpleado }) |
+            @Html.ActionLink("Borrar", "Delete", new { id=item.IdEmpleado })
+        </td>
+    </tr>
+}
+
+</table>

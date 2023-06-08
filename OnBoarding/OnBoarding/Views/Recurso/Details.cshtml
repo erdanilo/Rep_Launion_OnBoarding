@@ -1,0 +1,83 @@
+﻿@model OnBoarding.Models.OBDTRecurso
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>OBDTRecurso</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CodigoRecurso)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CodigoRecurso)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NombreRecurso)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NombreRecurso)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Reponsable)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Reponsable)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Activo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Activo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UsuarioInserto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UsuarioInserto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaInserto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaInserto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UsuarioModifico)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UsuarioModifico)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaModifico)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaModifico)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IdRecurso }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

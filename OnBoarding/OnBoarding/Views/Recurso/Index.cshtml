@@ -1,0 +1,49 @@
+﻿@model IEnumerable<OnBoarding.Models.OBDTRecurso>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Recursos</h2>
+
+<p>
+    @Html.ActionLink("Crear nuevo recurso", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CodigoRecurso)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NombreRecurso)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Reponsable)
+        </th>        
+        <th>
+            Opciones
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CodigoRecurso)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NombreRecurso)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Reponsable)
+        </td>        
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.IdRecurso }) |
+            @Html.ActionLink("Detalles", "Details", new { id=item.IdRecurso }) |
+            @Html.ActionLink("Borrar", "Delete", new { id=item.IdRecurso })
+        </td>
+    </tr>
+}
+
+</table>

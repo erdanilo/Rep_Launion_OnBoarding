@@ -1,0 +1,75 @@
+﻿@model OnBoarding.Models.OBDTPuesto
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>OBDTPuesto</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CodigoPuesto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CodigoPuesto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NombrePuesto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NombrePuesto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Activo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Activo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UsuarioInserto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UsuarioInserto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaInserto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaInserto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UsuarioModifico)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UsuarioModifico)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaModifico)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaModifico)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IdPuesto }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

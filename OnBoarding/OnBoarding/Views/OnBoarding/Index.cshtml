@@ -1,0 +1,188 @@
+﻿
+@{
+    ViewBag.Title = "View";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Crear plan a puesto</h2>
+
+
+@{
+    ViewBag.Title = "Inicio";
+}
+
+<ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#recurso">Recursos</a></li>
+    <li><a data-toggle="tab" href="#objetivos">Objetivos de aprendizaje</a></li>
+    <li><a data-toggle="tab" href="#evaluacion">Evaluacion</a></li>
+</ul>
+
+<div class="tab-content">
+    @*Pestaña Recursos*@
+    <div id="recurso" class="tab-pane fade in active">
+        <br />        
+        <div class="form-group">
+            <label> Recursos </label>
+            @Html.DropDownList("Recursos", null, htmlAttributes: new { @class = "form-control", @name = "recurso", @id = "recurso" })
+        </div>
+        <button class="btn btn-primary btn-rounded" onclick="AsignarNuevoRecurso()"><i class="fa fa-home"></i>Agregar</button>
+        <br/> <br /> <br />
+        
+        <table class="table" id="tabla_recursos">
+            <tr>
+                <th>
+                    Id
+                </th>
+                <th>
+                    Nombre
+                </th>
+                <th>
+                    Responsable
+                </th>
+                <th>
+                    Opciones
+                </th>
+            </tr>
+        </table>
+        <br />
+        <button type="button" class="btn btn-primary" onclick="AvanzarTabObjetivos()">Siguiente</button>
+    </div>
+    @*Pestaña objetivos*@
+    <div id="objetivos" class="tab-pane fade">
+        <br />
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="proveedor" id="comercio" value="comercio">
+            <label class="form-check-label" for="comercio">Comercio</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="proveedor" id="sucursal" value="sucursal">
+            <label class="form-check-label" for="sucursal">Sucursal</label>
+        </div>
+        <br />
+        <fieldset>
+            <legend>Comercio</legend>
+            <label> Municipio </label>
+            <br />
+            <div class="form-group">
+                <label> Nombre </label>
+                <input type="text" class="form-control" id="nombreComercio" name="nombreComercio">
+            </div>
+            <div class="form-group">
+                <label> Dirección </label>
+                <input type="text" class="form-control" id="direccionComercio" name="direccionComercio">
+            </div>
+            <div class="form-group">
+                <label> Nit </label>
+                <input type="text" class="form-control" id="nitComercio" name="nitComercio">
+            </div>
+            <div class="form-group">
+                <label> Teléfono </label>
+                <input type="number" class="form-control" id="telefonoComercio" name="telefonoComercio">
+            </div>
+        </fieldset>
+        <br />
+        <fieldset>
+            <legend>Sucursal</legend>
+            <label> Municipio </label>
+            <br />
+            <div class="form-group">
+                <label> Nombre </label>
+                <input type="text" class="form-control" id="nombreSucursal" name="nombreSucursal">
+            </div>
+            <div class="form-group">
+                <label> Dirección </label>
+                <input type="text" class="form-control" id="direccionSucursal" name="direccionSucursal">
+            </div>
+            <div class="form-group">
+                <label> Nit </label>
+                <input type="text" class="form-control" id="nitSucursal" name="nitSucursal">
+            </div>
+            <div class="form-group">
+                <label> Teléfono</label>
+                <input type="number" class="form-control" id="telefonoSucursal" name="telefonoSucursal">
+            </div>
+        </fieldset>
+        <br />
+
+        <button type="button" class="btn btn-primary" onclick="RegresarTabRecurso()">Atras</button>
+        <button type="button" class="btn btn-primary" onclick="AvanzarTabEvaluacion()">Siguiente</button>
+    </div>
+    @*Pestaña evaluacion*@
+    <div id="evaluacion" class="tab-pane fade">
+        <br />
+        <div class="form-group">
+            <label> Tipo de queja </label>
+        </div>
+        <div class="form-group">
+            <label> Descripción </label>
+            <input type="text" class="form-control" id="descripcionQueja" name="descripcionQueja">
+        </div>
+        <br />
+
+        <button type="button" class="btn btn-primary" onclick="RegresarTabObjetivos()">Atras</button>
+        <button type="button" class="btn btn-success">Guardar</button>
+    </div>
+</div>
+
+@section Scripts{
+    <script type="text/javascript">
+        let tablaRecursos = document.getElementById("tabla_recursos");
+
+        function AvanzarTabObjetivos() {
+            $('[href="#objetivos"]').tab('show');
+        }
+
+        function RegresarTabRecurso() {
+            $('[href="#recurso"]').tab('show');
+        }
+
+        function AvanzarTabEvaluacion() {
+            $('[href="#evaluacion"]').tab('show');
+        }
+
+        function RegresarTabObjetivos() {
+            $('[href="#objetivos"]').tab('show');
+        }
+
+        $(document).ready(function () {
+            $("footer").css("background-color", "#309bff");
+        });
+
+        function AsignarNuevoRecurso() {
+            debugger
+
+            let id = $("#recurso :selected").val();
+            let texto = $("#recurso :selected").text();
+
+            $.ajax({
+                url: "/OnBoarding/ObtenerRecursoPorId/" + id,
+                type: 'Get',             
+                async: false,             
+                success: function (data) {
+                    debugger                  
+
+                    let IdRecurso = data.IdRecurso;
+                    let NombreRecurso = data.NombreRecurso;
+                    let Responsable = data.Reponsable;
+                   
+                    tablaRecursos.innerHTML += `<tr>
+                                    <td> ${IdRecurso} </td>
+                                    <td> ${NombreRecurso} </td>
+                                    <td> ${Responsable} </td>
+                                    <td> <button type="button" class="btn btn-danger">Borrar</button> </td>
+                                </tr>`;
+                }
+            })
+        }
+
+        tablaRecursos.addEventListener("click", BorrarFila);
+        function BorrarFila(e) {
+            if (!e.target.classList.contains("btn-danger")) {
+                return;
+            }
+
+            const boton = e.target;
+            boton.closest("tr").remove();
+        }
+    </script>
+}
